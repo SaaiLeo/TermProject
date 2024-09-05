@@ -7,14 +7,14 @@
 
 import UIKit
 
+var menus: [Menu] = []
+
 class HomePageViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellerCollectionView: UICollectionView!
     
     var categories: [MenuCategory] = []
-    
-    var menus: [Menu] = []
     
     var bestSellers: [Menu] = []
 
@@ -31,6 +31,15 @@ class HomePageViewController: UIViewController {
         menus.append(Menu(name: "Cuppuccino", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
         menus.append(Menu(name: "Cuppuccino2", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
         menus.append(Menu(name: "Cuppuccino3", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
+        menus.append(Menu(name: "Cuppuccino3", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
         menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
         
         bestSellers = menus.filter{ $0.popularity == "bestSeller" }
