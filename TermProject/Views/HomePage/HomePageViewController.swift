@@ -15,6 +15,8 @@ class HomePageViewController: UIViewController {
     var categories: [MenuCategory] = []
     
     var menus: [Menu] = []
+    
+    var bestSellers: [Menu] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,9 @@ class HomePageViewController: UIViewController {
         menus.append(Menu(name: "Cuppuccino", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
         menus.append(Menu(name: "Cuppuccino2", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
         menus.append(Menu(name: "Cuppuccino3", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller"))
+        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending"))
         
+        bestSellers = menus.filter{ $0.popularity == "bestSeller" }
         registerCell()
     }
     
@@ -47,7 +50,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         case categoryCollectionView:
             return categories.count
         case bestSellerCollectionView:
-            return menus.count
+            return bestSellers.count
         default:
             return 0
         }
@@ -65,7 +68,7 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         case bestSellerCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
             
-            cell.setup(menus[indexPath.row])
+            cell.setup(bestSellers[indexPath.row])
             return cell
             
         default:
