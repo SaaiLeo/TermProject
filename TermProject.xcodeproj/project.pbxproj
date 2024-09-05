@@ -17,6 +17,7 @@
 		B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812DB2C89A63900696E61 /* OnBoardingCollectionViewCell.swift */; };
 		B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812DD2C89A80600696E61 /* OnBoardingSlide.swift */; };
 		B33812E32C89C2C900696E61 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812E22C89C2C900696E61 /* LoginPageViewController.swift */; };
+		B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812E52C89D15C00696E61 /* HomePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B33812DB2C89A63900696E61 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		B33812DD2C89A80600696E61 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		B33812E22C89C2C900696E61 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		B33812E52C89D15C00696E61 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		B33812D32C89A37500696E61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B33812E42C89D14600696E61 /* HomePage */,
 				B33812DF2C89C29A00696E61 /* LoginPage */,
 				B33812D72C89A3C200696E61 /* onBoardingPage */,
 			);
@@ -125,6 +128,14 @@
 				B33812E22C89C2C900696E61 /* LoginPageViewController.swift */,
 			);
 			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		B33812E42C89D14600696E61 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				B33812E52C89D15C00696E61 /* HomePageViewController.swift */,
+			);
+			path = HomePage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				B33812BF2C899F7300696E61 /* AppDelegate.swift in Sources */,
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
 				B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */,
+				B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */,
 				B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */,
 				B33812E32C89C2C900696E61 /* LoginPageViewController.swift in Sources */,
 				B33812C12C899F7300696E61 /* SceneDelegate.swift in Sources */,
