@@ -18,6 +18,10 @@
 		B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812DD2C89A80600696E61 /* OnBoardingSlide.swift */; };
 		B33812E32C89C2C900696E61 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812E22C89C2C900696E61 /* LoginPageViewController.swift */; };
 		B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812E52C89D15C00696E61 /* HomePageViewController.swift */; };
+		B33812EB2C89D86000696E61 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B33812EA2C89D86000696E61 /* CategoryCollectionViewCell.xib */; };
+		B33812EC2C89D86000696E61 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812E92C89D86000696E61 /* CategoryCollectionViewCell.swift */; };
+		B33812EE2C89D9EC00696E61 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812ED2C89D9EC00696E61 /* MenuCategory.swift */; };
+		B33812F12C89DECE00696E61 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812F02C89DECE00696E61 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		B33812DD2C89A80600696E61 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		B33812E22C89C2C900696E61 /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		B33812E52C89D15C00696E61 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		B33812E92C89D86000696E61 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		B33812EA2C89D86000696E61 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		B33812ED2C89D9EC00696E61 /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
+		B33812F02C89DECE00696E61 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				B33812DD2C89A80600696E61 /* OnBoardingSlide.swift */,
+				B33812ED2C89D9EC00696E61 /* MenuCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +110,8 @@
 		B33812D42C89A37B00696E61 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B33812EF2C89DEB800696E61 /* CardView */,
+				B33812E72C89D83300696E61 /* CollectionViewCells */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -136,6 +147,31 @@
 				B33812E52C89D15C00696E61 /* HomePageViewController.swift */,
 			);
 			path = HomePage;
+			sourceTree = "<group>";
+		};
+		B33812E72C89D83300696E61 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B33812E82C89D83E00696E61 /* CategoryCollectionViewCell */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		B33812E82C89D83E00696E61 /* CategoryCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B33812E92C89D86000696E61 /* CategoryCollectionViewCell.swift */,
+				B33812EA2C89D86000696E61 /* CategoryCollectionViewCell.xib */,
+			);
+			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B33812EF2C89DEB800696E61 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				B33812F02C89DECE00696E61 /* CardView.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B33812EB2C89D86000696E61 /* CategoryCollectionViewCell.xib in Resources */,
 				B33812C82C899F7400696E61 /* Assets.xcassets in Resources */,
 				B33812CB2C899F7400696E61 /* Base in Resources */,
 				B33812C62C899F7300696E61 /* Base in Resources */,
@@ -213,9 +250,12 @@
 				B33812BF2C899F7300696E61 /* AppDelegate.swift in Sources */,
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
 				B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */,
+				B33812EE2C89D9EC00696E61 /* MenuCategory.swift in Sources */,
+				B33812EC2C89D86000696E61 /* CategoryCollectionViewCell.swift in Sources */,
 				B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */,
 				B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */,
 				B33812E32C89C2C900696E61 /* LoginPageViewController.swift in Sources */,
+				B33812F12C89DECE00696E61 /* CardView.swift in Sources */,
 				B33812C12C899F7300696E61 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
