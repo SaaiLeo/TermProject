@@ -375,6 +375,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hd1-eb-uIK" kind="relationship" relationship="viewControllers" id="J9A-9J-qKF"/>
+                        <segue destination="DTp-st-ptc" kind="relationship" relationship="viewControllers" id="qPs-gl-ZF7"/>
                         <segue destination="jN4-3j-Kyk" kind="relationship" relationship="viewControllers" id="vvy-YB-UNw"/>
                     </connections>
                 </tabBarController>
@@ -401,6 +402,60 @@
             </objects>
             <point key="canvasLocation" x="3500" y="-385.21126760563385"/>
         </scene>
+        <!--Menu-->
+        <scene sceneID="GDM-sR-Vb5">
+            <objects>
+                <viewController id="DTp-st-ptc" customClass="MenuPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lXG-Tu-KNM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Beo-DK-eEq">
+                                <rect key="frame" x="0.0" y="93" width="393" height="676"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="20" minimumInteritemSpacing="20" id="C7A-C1-ddq">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DTp-st-ptc" id="tKj-oE-EL9"/>
+                                    <outlet property="delegate" destination="DTp-st-ptc" id="1ba-Fx-Rgc"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4W-ul-8GO">
+                                <rect key="frame" x="16" y="59" width="361" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="wbX-fm-EPf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FLd-Gg-roh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FLd-Gg-roh" firstAttribute="trailing" secondItem="z4W-ul-8GO" secondAttribute="trailing" constant="16" id="DSC-Om-jL6"/>
+                            <constraint firstItem="Beo-DK-eEq" firstAttribute="top" secondItem="z4W-ul-8GO" secondAttribute="bottom" constant="8" id="HUu-Wx-ppu"/>
+                            <constraint firstItem="Beo-DK-eEq" firstAttribute="trailing" secondItem="FLd-Gg-roh" secondAttribute="trailing" id="PYq-Bl-r69"/>
+                            <constraint firstItem="z4W-ul-8GO" firstAttribute="top" secondItem="FLd-Gg-roh" secondAttribute="top" id="UWx-B7-b2F"/>
+                            <constraint firstItem="z4W-ul-8GO" firstAttribute="leading" secondItem="FLd-Gg-roh" secondAttribute="leading" constant="16" id="VcA-Ac-rde"/>
+                            <constraint firstItem="Beo-DK-eEq" firstAttribute="bottom" secondItem="FLd-Gg-roh" secondAttribute="bottom" id="iIO-nQ-SYd"/>
+                            <constraint firstItem="Beo-DK-eEq" firstAttribute="leading" secondItem="FLd-Gg-roh" secondAttribute="leading" id="otX-Mx-SFR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Menu" image="menucard.fill" catalog="system" id="R87-tT-Lay"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Beo-DK-eEq" id="CbQ-jN-zCX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="icj-Sa-MbR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689.3129770992364" y="340.84507042253523"/>
+        </scene>
         <!--History-->
         <scene sceneID="4fH-9F-CEB">
             <objects>
@@ -411,7 +466,7 @@
                         <viewLayoutGuide key="safeArea" id="Jdw-P7-Wmx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="list.bullet.rectangle.portrait.fill" catalog="system" id="n1R-Sm-bY3"/>
+                    <tabBarItem key="tabBarItem" title="History" image="clock.arrow.circlepath" catalog="system" id="n1R-Sm-bY3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOf-IW-bnc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -420,13 +475,14 @@
     </scenes>
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="clock.arrow.circlepath" catalog="system" width="128" height="112"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="list.bullet.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
+        <image name="menucard.fill" catalog="system" width="105" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
