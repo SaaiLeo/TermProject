@@ -37,7 +37,11 @@ class OnBoardingPageViewController: UIViewController {
     
     @IBAction func nextButtonClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
-            print("Get Started")
+            let scene = storyboard?.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
+            
+            scene.modalPresentationStyle = .fullScreen
+            scene.modalTransitionStyle = .flipHorizontal
+            present(scene, animated: true)
         }else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)
