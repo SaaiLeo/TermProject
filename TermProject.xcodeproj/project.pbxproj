@@ -26,6 +26,7 @@
 		B33812F62C89F55B00696E61 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812F32C89F55B00696E61 /* MenuCollectionViewCell.swift */; };
 		B33812F82C89F91300696E61 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812F72C89F91300696E61 /* Menu.swift */; };
 		B33813012C8A0E8900696E61 /* MenuPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33813002C8A0E8900696E61 /* MenuPageViewController.swift */; };
+		B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B33812F42C89F55B00696E61 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		B33812F72C89F91300696E61 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		B33813002C8A0E8900696E61 /* MenuPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPageViewController.swift; sourceTree = "<group>"; };
+		B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				B33813002C8A0E8900696E61 /* MenuPageViewController.swift */,
+				B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */,
 			);
 			path = MenuPage;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
 				B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */,
 				B33812EE2C89D9EC00696E61 /* MenuCategory.swift in Sources */,
+				B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */,
 				B33812EC2C89D86000696E61 /* CategoryCollectionViewCell.swift in Sources */,
 				B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */,
 				B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */,
