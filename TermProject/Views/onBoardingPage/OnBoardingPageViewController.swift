@@ -40,7 +40,7 @@ class OnBoardingPageViewController: UIViewController {
             let scene = storyboard?.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
             
             scene.modalPresentationStyle = .fullScreen
-            scene.modalTransitionStyle = .flipHorizontal
+            scene.modalTransitionStyle = .crossDissolve
             present(scene, animated: true)
         }else {
             currentPage += 1
