@@ -26,6 +26,7 @@
 		B33812F62C89F55B00696E61 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812F32C89F55B00696E61 /* MenuCollectionViewCell.swift */; };
 		B33812F82C89F91300696E61 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812F72C89F91300696E61 /* Menu.swift */; };
 		B33813012C8A0E8900696E61 /* MenuPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33813002C8A0E8900696E61 /* MenuPageViewController.swift */; };
+		FAE8AB0A2C8B2DBA00889425 /* HistoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8AB092C8B2DBA00889425 /* HistoryPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B33812F42C89F55B00696E61 /* MenuCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCollectionViewCell.xib; sourceTree = "<group>"; };
 		B33812F72C89F91300696E61 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		B33813002C8A0E8900696E61 /* MenuPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPageViewController.swift; sourceTree = "<group>"; };
+		FAE8AB092C8B2DBA00889425 /* HistoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryPageViewController.swift; path = TermProject/HistoryPageViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 		B33812FE2C8A0DD400696E61 /* HistoryPage */ = {
 			isa = PBXGroup;
 			children = (
+				FAE8AB092C8B2DBA00889425 /* HistoryPageViewController.swift */,
 			);
 			path = HistoryPage;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33812D62C89A3BB00696E61 /* OnBoardingPageViewController.swift in Sources */,
+				FAE8AB0A2C8B2DBA00889425 /* HistoryPageViewController.swift in Sources */,
 				B33812BF2C899F7300696E61 /* AppDelegate.swift in Sources */,
 				B33813012C8A0E8900696E61 /* MenuPageViewController.swift in Sources */,
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
