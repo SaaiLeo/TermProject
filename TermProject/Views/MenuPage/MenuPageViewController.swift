@@ -34,5 +34,13 @@ extension MenuPageViewController: UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+        
+        scene.menu = menus[indexPath.row]
+        
+        present(scene, animated: true)
+    }
+    
     
 }
