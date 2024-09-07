@@ -46,8 +46,8 @@ class MenuDetailViewController: UIViewController {
     
     private func calculateTotal() {
         total = totalPerCup * Double(quantity)
-        priceLabel.text = String(totalPerCup)
-        totalLabel.text = String(total)
+        priceLabel.text = String(format: "%.2f", totalPerCup)
+        totalLabel.text = String(format: "%.2f", total)
     }
     
     @IBAction func sweetnessLvlClicked(_ sender: UISegmentedControl) {
@@ -98,7 +98,7 @@ class MenuDetailViewController: UIViewController {
     
     @IBAction func addToCartButtonClicked(_ sender: Any) {
         guard let menu = menu else {return}
-        let order = Order(time: Date.now, name: menu.name, total: self.total, sweetnessLvl: self.sweetnessLvl, size: self.size, quantity: self.quantity)
+        let order = Order(time: Date.now, name: menu.name, total: Double(String(format: "%.2f",self.total))!, sweetnessLvl: self.sweetnessLvl, size: self.size, quantity: self.quantity)
         print(order)
     }
     
