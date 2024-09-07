@@ -9,25 +9,45 @@ import UIKit
 
 class MenuDetailViewController: UIViewController {
     
+    static let identifier = String(describing: MenuDetailViewController.self)
+    
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var totalLabel: UILabel!
     
     var sweetnessLvl: String = ""
     var size: String = ""
     var quantity: Int = 1
+    var totalPerCup: Double = 0.0
+    var total: Double = 0.0
     
-    let menu: Menu? = nil
+    var menu: Menu? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        footerView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         guard let menu = menu else {return}
         menuImageView.image = UIImage(named: menu.image)
         nameLabel.text = menu.name
+        
+        totalLabel.text = menu.price
+        
+        size = menu.sizePrice[0].size
+        sweetnessLvl = "Zero"
+        totalPerCup = menu.getPrice(forSize: size)
+        calculateTotal()
+        
         priceLabel.text = menu.price
-
+    }
+    
+    private func calculateTotal() {
+        total = totalPerCup * Double(quantity)
+        priceLabel.text = String(totalPerCup)
+        totalLabel.text = String(total)
     }
     
     @IBAction func sweetnessLvlClicked(_ sender: UISegmentedControl) {
@@ -49,24 +69,37 @@ class MenuDetailViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             size = "Small"
+            totalPerCup = (menu?.getPrice(forSize: size))!
+            calculateTotal()
         case 1:
             size = "Medium"
+            totalPerCup = (menu?.getPrice(forSize: size))!
+            calculateTotal()
         case 2:
             size = "Large"
+            totalPerCup = (menu?.getPrice(forSize: size))!
+            calculateTotal()
         case 3:
             size = "Extra Large"
+            totalPerCup = (menu?.getPrice(forSize: size))!
+            calculateTotal()
         default:
             size = ""
+            totalPerCup = (menu?.getPrice(forSize: size))!
+            calculateTotal()
         }
     }
     
     @IBAction func quantityStepperClicked(_ sender: UIStepper) {
         quantity = Int(sender.value)
         quantityLabel.text = String(quantity)
+        calculateTotal()
     }
     
     @IBAction func addToCartButtonClicked(_ sender: Any) {
-        print(sweetnessLvl, size, quantity)
+        guard let menu = menu else {return}
+        let order = Order(time: Date.now, name: menu.name, total: self.total, sweetnessLvl: self.sweetnessLvl, size: self.size, quantity: self.quantity)
+        print(order)
     }
     
 }
