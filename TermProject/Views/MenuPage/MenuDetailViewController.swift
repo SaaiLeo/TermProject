@@ -100,6 +100,7 @@ class MenuDetailViewController: UIViewController {
         guard let menu = menu else {return}
         let order = Order(time: Date.now, name: menu.name, total: Double(String(format: "%.2f",self.total))!, sweetnessLvl: self.sweetnessLvl, size: self.size, quantity: self.quantity)
         print(order)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
