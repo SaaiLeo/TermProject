@@ -9,6 +9,8 @@ import UIKit
 
 class MenuPageViewController: UIViewController {
     
+    static let identifier = String(describing: MenuPageViewController.self)
+    
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {

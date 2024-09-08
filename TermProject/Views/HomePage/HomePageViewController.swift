@@ -14,6 +14,8 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellerCollectionView: UICollectionView!
     
+
+    
     var categories: [MenuCategory] = []
     
     var bestSellers: [Menu] = []
@@ -83,7 +85,26 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         default:
             return UICollectionViewCell()
         }
-
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        switch collectionView{
+        case categoryCollectionView:
+            let scene = storyboard?.instantiateViewController(withIdentifier: MenuPageViewController.identifier) as! MenuPageViewController
+            
+            scene.modalPresentationStyle = .fullScreen
+            present(scene, animated: true)
+            
+        case bestSellerCollectionView:
+            let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+            
+            scene.menu = bestSellers[indexPath.row]
+            present(scene, animated: true)
+            
+        default:
+            return
+        }
     }
     
     
