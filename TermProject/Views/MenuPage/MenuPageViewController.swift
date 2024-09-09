@@ -37,11 +37,42 @@ extension MenuPageViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
         
-        scene.menu = menus[indexPath.row]
+        let item = menus[indexPath.row]
         
-        present(scene, animated: true)
+        switch item.category {
+            
+        case "coffee" :
+            let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+            scene.menu = menus[indexPath.row]
+            present(scene, animated: true)
+            
+        case "drink" :
+            let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+            scene.menu = menus[indexPath.row]
+            present(scene, animated: true)
+            
+        case "cake" :
+            let scene = storyboard?.instantiateViewController(withIdentifier: CakeMenuDetailViewController.identifier) as! CakeMenuDetailViewController
+            scene.menu = menus[indexPath.row]
+            present(scene, animated: true)
+            
+        case "snack":
+            let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+            scene.menu = menus[indexPath.row]
+            present(scene, animated: true)
+            
+        case "food":
+            let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+            scene.menu = menus[indexPath.row]
+            present(scene, animated: true)
+            
+        default:
+            let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+            scene.menu = menus[indexPath.row]
+            present(scene, animated: true)
+        }
+        
     }
     
     
