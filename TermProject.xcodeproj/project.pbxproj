@@ -27,6 +27,8 @@
 		B33812F82C89F91300696E61 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812F72C89F91300696E61 /* Menu.swift */; };
 		B33813012C8A0E8900696E61 /* MenuPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33813002C8A0E8900696E61 /* MenuPageViewController.swift */; };
 		B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */; };
+		B35194602C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */; };
+		B35194622C8EDFCF003B113F /* CakeMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */; };
 		B3B5803C2C8C931900CDB83F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B5803B2C8C931900CDB83F /* Order.swift */; };
 		FA946E5C2C8B381D004A29C9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */; };
 		FA946E5F2C8B39A2004A29C9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA946E5E2C8B39A2004A29C9 /* FirebaseAuth */; };
@@ -60,6 +62,8 @@
 		B33812F72C89F91300696E61 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		B33813002C8A0E8900696E61 /* MenuPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPageViewController.swift; sourceTree = "<group>"; };
 		B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
+		B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonDrinkMenuDetailViewController.swift; sourceTree = "<group>"; };
+		B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeMenuDetailViewController.swift; sourceTree = "<group>"; };
 		B3B5803B2C8C931900CDB83F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FA946E662C8B39CA004A29C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 			children = (
 				B33813002C8A0E8900696E61 /* MenuPageViewController.swift */,
 				B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */,
+				B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */,
+				B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */,
 			);
 			path = MenuPage;
 			sourceTree = "<group>";
@@ -323,6 +329,8 @@
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
 				FA946E5C2C8B381D004A29C9 /* SignUpViewController.swift in Sources */,
 				B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */,
+				B35194602C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift in Sources */,
+				B35194622C8EDFCF003B113F /* CakeMenuDetailViewController.swift in Sources */,
 				B33812EE2C89D9EC00696E61 /* MenuCategory.swift in Sources */,
 				B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */,
 				B33812EC2C89D86000696E61 /* CategoryCollectionViewCell.swift in Sources */,
