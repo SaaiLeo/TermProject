@@ -19,24 +19,22 @@ class HomePageViewController: UIViewController {
     
     
     var categories: [MenuCategory] = []
-    
     var bestSellers: [Menu] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Coffee"))
-        categories.append(MenuCategory(id: "id2", image: "cupcake", title: "Cupcake"))
-        categories.append(MenuCategory(id: "id2", image: "cappuccino", title: "Coffee3"))
-        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Coffee4"))
-        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Coffee5"))
-        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Coffee6"))
+        categories.append(MenuCategory(id: "id2", image: "cupcake", title: "Cake"))
+        categories.append(MenuCategory(id: "id2", image: "cappuccino", title: "Food"))
+        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Snack"))
+        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Drink"))
         
         menus.append(Menu(name: "Cuppuccino", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Brownie Cupcake", price: "$1.99", image: "cupcake", category: "cupcake", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino3", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino3", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
+        menus.append(Menu(name: "Brownie Cupcake", price: "$1.99", image: "cupcake", category: "cake", popularity: "bestSeller", sizePrice: [SizePrice(size: "Normal", price: 1.99)]))
+        menus.append(Menu(name: "Orange", price: "$3.99", image: "orange_juice", category: "drink", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
+        menus.append(Menu(name: "Caesar Salad", price: "$3.99", image: "caesar_salad", category: "food", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
+        menus.append(Menu(name: "French Fries", price: "$3.99", image: "french_fries", category: "snack", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
         menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
         menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
         menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
