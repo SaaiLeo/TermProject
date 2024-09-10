@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class CartItemTableViewCell: UITableViewCell {
     
     static let identifier = String(describing: CartItemTableViewCell.self)
@@ -16,9 +17,6 @@ class CartItemTableViewCell: UITableViewCell {
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
 
-    @IBAction func deleteIconClicked(_ sender: UIButton) {
-        print("delete button click")
-    }
     
     func setup(_ order: Order) {
         menuImageView.image = UIImage(named: order.image)

@@ -55,11 +55,6 @@ class HomePageViewController: UIViewController {
         trendingsCollectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
     }
     
-    @IBAction func cartButtonClicked(_ sender: UIBarButtonItem) {
-        let scene = storyboard?.instantiateViewController(withIdentifier: CartPageViewController.identifier) as! CartPageViewController
-        
-        navigationController?.pushViewController(scene, animated: true)
-    }
     
 }
 
