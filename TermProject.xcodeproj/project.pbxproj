@@ -29,6 +29,9 @@
 		B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */; };
 		B35194602C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */; };
 		B35194622C8EDFCF003B113F /* CakeMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */; };
+		B3679EA32C900F1A000F9F24 /* CartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3679EA02C900F1A000F9F24 /* CartPageViewController.swift */; };
+		B3679EA82C901019000F9F24 /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3679EA72C901019000F9F24 /* CartItemTableViewCell.xib */; };
+		B3679EA92C901019000F9F24 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3679EA62C901019000F9F24 /* CartItemTableViewCell.swift */; };
 		B3B5803C2C8C931900CDB83F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B5803B2C8C931900CDB83F /* Order.swift */; };
 		FA946E5C2C8B381D004A29C9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */; };
 		FA946E5F2C8B39A2004A29C9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA946E5E2C8B39A2004A29C9 /* FirebaseAuth */; };
@@ -64,6 +67,9 @@
 		B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonDrinkMenuDetailViewController.swift; sourceTree = "<group>"; };
 		B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeMenuDetailViewController.swift; sourceTree = "<group>"; };
+		B3679EA02C900F1A000F9F24 /* CartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPageViewController.swift; sourceTree = "<group>"; };
+		B3679EA62C901019000F9F24 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
+		B3679EA72C901019000F9F24 /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
 		B3B5803B2C8C931900CDB83F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FA946E662C8B39CA004A29C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		B33812D32C89A37500696E61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B3679E9F2C900EFF000F9F24 /* CartPage */,
 				B33812FF2C8A0DF600696E61 /* MenuPage */,
 				B33812FE2C8A0DD400696E61 /* HistoryPage */,
 				B33812E42C89D14600696E61 /* HomePage */,
@@ -145,6 +152,7 @@
 		B33812D42C89A37B00696E61 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B3679EA42C900FE2000F9F24 /* TableViewCells */,
 				B33812EF2C89DEB800696E61 /* CardView */,
 				B33812E72C89D83300696E61 /* CollectionViewCells */,
 			);
@@ -239,6 +247,31 @@
 			path = MenuPage;
 			sourceTree = "<group>";
 		};
+		B3679E9F2C900EFF000F9F24 /* CartPage */ = {
+			isa = PBXGroup;
+			children = (
+				B3679EA02C900F1A000F9F24 /* CartPageViewController.swift */,
+			);
+			path = CartPage;
+			sourceTree = "<group>";
+		};
+		B3679EA42C900FE2000F9F24 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B3679EA52C900FF5000F9F24 /* CartItemTableViewCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B3679EA52C900FF5000F9F24 /* CartItemTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B3679EA62C901019000F9F24 /* CartItemTableViewCell.swift */,
+				B3679EA72C901019000F9F24 /* CartItemTableViewCell.xib */,
+			);
+			path = CartItemTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,6 +343,7 @@
 				B33812C82C899F7400696E61 /* Assets.xcassets in Resources */,
 				B33812F52C89F55B00696E61 /* MenuCollectionViewCell.xib in Resources */,
 				B33812CB2C899F7400696E61 /* Base in Resources */,
+				B3679EA82C901019000F9F24 /* CartItemTableViewCell.xib in Resources */,
 				B33812C62C899F7300696E61 /* Base in Resources */,
 				FA946E672C8B39CA004A29C9 /* GoogleService-Info.plist in Resources */,
 			);
@@ -334,10 +368,12 @@
 				B33812EE2C89D9EC00696E61 /* MenuCategory.swift in Sources */,
 				B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */,
 				B33812EC2C89D86000696E61 /* CategoryCollectionViewCell.swift in Sources */,
+				B3679EA92C901019000F9F24 /* CartItemTableViewCell.swift in Sources */,
 				B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */,
 				B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */,
 				B3B5803C2C8C931900CDB83F /* Order.swift in Sources */,
 				B33812E32C89C2C900696E61 /* LoginPageViewController.swift in Sources */,
+				B3679EA32C900F1A000F9F24 /* CartPageViewController.swift in Sources */,
 				B33812F82C89F91300696E61 /* Menu.swift in Sources */,
 				B33812F12C89DECE00696E61 /* CardView.swift in Sources */,
 				B33812C12C899F7300696E61 /* SceneDelegate.swift in Sources */,
