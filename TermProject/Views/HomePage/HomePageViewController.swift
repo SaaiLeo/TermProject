@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 var menus: [Menu] = []
 
@@ -14,6 +15,8 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellerCollectionView: UICollectionView!
     @IBOutlet weak var trendingsCollectionView: UICollectionView!
+    
+    @IBOutlet weak var greetingMsgLabel: UILabel!
     
 
     
@@ -47,12 +50,58 @@ class HomePageViewController: UIViewController {
         bestSellers = menus.filter{ $0.popularity == "bestSeller" }
         trendings = menus.filter{ $0.popularity == "trending" }
         registerCell()
+        greetingBasedOnTime(in: "Asia/Bangkok")
+        
     }
     
     private func registerCell() {
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         bestSellerCollectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
         trendingsCollectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
+    }
+    
+    private func greetingBasedOnTime(in timeZoneIdentifier: String) {
+        // Get the current date and time
+            let currentDate = Date()
+            
+            // Create a DateFormatter to extract the hour component
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH" // 24-hour format
+            
+            // Set to a specific time zone if provided
+            if let timeZone = TimeZone(identifier: timeZoneIdentifier) {
+                dateFormatter.timeZone = timeZone
+            } else {
+                dateFormatter.timeZone = TimeZone.current // Default to local time zone
+            }
+            
+            // Set a locale to ensure consistent behavior
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            
+            // Get the current hour as a string
+            let hourString = dateFormatter.string(from: currentDate)
+            print("Hour String: \(hourString)") // Debug print
+            
+            // Safely convert the hour string to an integer
+            guard let currentHour = Int(hourString) else {
+                // Return a default value or handle the error as needed
+                 print("Error determining time")
+                return
+            }
+        var msg: String = ""
+        // Determine the appropriate greeting based on the hour
+            switch currentHour {
+            case 0..<12:
+                msg = "Good Morning,"
+            case 12..<17:
+                msg = "Good Afternoon,"
+            case 17..<21:
+                msg = "Good Evening,"
+            default:
+                msg = "Good Night,"
+            }
+        
+        greetingMsgLabel.text = msg
     }
     
     

@@ -530,6 +530,7 @@
                     <connections>
                         <outlet property="bestSellerCollectionView" destination="a9e-xO-EFG" id="dk4-Lg-3VQ"/>
                         <outlet property="categoryCollectionView" destination="QKO-c4-cOH" id="bxI-hf-TB6"/>
+                        <outlet property="greetingMsgLabel" destination="NWd-M7-tuE" id="vTk-ii-eZA"/>
                         <outlet property="trendingsCollectionView" destination="7KW-JN-kOW" id="UtV-gz-5Lw"/>
                     </connections>
                 </viewController>
@@ -581,15 +582,14 @@
                                                 <color key="backgroundColor" red="0.5" green="0.38528584989999998" blue="0.28287024910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Add to Cart"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Order Now"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="addToCartButtonClicked:" destination="0pC-m9-1MZ" eventType="touchUpInside" id="nxB-xG-S0B"/>
-                                                    <action selector="addToCartButtonClicked:" destination="dXb-4j-mSq" eventType="touchUpInside" id="yhY-h7-pQr"/>
+                                                    <action selector="orderButtonClicked:" destination="kxh-B2-4ch" eventType="touchUpInside" id="HRy-hC-p2I"/>
                                                 </connections>
                                             </button>
                                         </subviews>

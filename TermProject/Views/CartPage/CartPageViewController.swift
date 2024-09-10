@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 var CART: [Order] = []
 
@@ -40,6 +41,16 @@ class CartPageViewController: UIViewController, CALayerDelegate {
         for i in CART {
             self.total += i.total
         }
+    }
+    
+    @IBAction func orderButtonClicked (_ sender : UIButton) {
+        let orderlist = OrderList(time: .now , total: self.total , orderList: CART)
+        CART = []
+        print("Order List:" , orderlist)
+        print("CART: ", CART)
+        tableView.reloadData()
+        calculateTotalInCart()
+        totalLabel.text = "\(total)"
     }
 }
 
