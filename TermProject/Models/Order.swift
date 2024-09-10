@@ -15,3 +15,9 @@ struct Order {
     let size: String
     let quantity: Int
 }
+
+struct OrderList {
+    let time: Date
+    let total: Double
+    let orderList: [Order]
+}
