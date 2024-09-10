@@ -8,7 +8,7 @@
 import Foundation
 
 struct Order {
-    let time: Date
+    let image: String
     let name: String
     let total: Double
     let sweetnessLvl: String

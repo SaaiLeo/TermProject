@@ -13,11 +13,13 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellerCollectionView: UICollectionView!
+    @IBOutlet weak var trendingsCollectionView: UICollectionView!
     
 
     
     var categories: [MenuCategory] = []
     var bestSellers: [Menu] = []
+    var trendings: [Menu] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +45,22 @@ class HomePageViewController: UIViewController {
         menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
         
         bestSellers = menus.filter{ $0.popularity == "bestSeller" }
+        trendings = menus.filter{ $0.popularity == "trending" }
         registerCell()
     }
     
     private func registerCell() {
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
         bestSellerCollectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
+        trendingsCollectionView.register(UINib(nibName: MenuCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MenuCollectionViewCell.identifier)
     }
+    
+    @IBAction func cartButtonClicked(_ sender: UIBarButtonItem) {
+        let scene = storyboard?.instantiateViewController(withIdentifier: CartPageViewController.identifier) as! CartPageViewController
+        
+        navigationController?.pushViewController(scene, animated: true)
+    }
+    
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -60,6 +71,8 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             return categories.count
         case bestSellerCollectionView:
             return bestSellers.count
+        case trendingsCollectionView:
+            return trendings.count
         default:
             return 0
         }
@@ -80,6 +93,12 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             cell.setup(bestSellers[indexPath.row])
             return cell
             
+        case trendingsCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCollectionViewCell.identifier, for: indexPath) as! MenuCollectionViewCell
+            
+            cell.setup(trendings[indexPath.row])
+            return cell
+            
         default:
             return UICollectionViewCell()
         }
@@ -95,10 +114,78 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
             present(scene, animated: true)
             
         case bestSellerCollectionView:
-            let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
             
-            scene.menu = bestSellers[indexPath.row]
-            present(scene, animated: true)
+            let item = bestSellers[indexPath.row]
+            
+            switch item.category {
+                
+            case "coffee" :
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.menu = bestSellers[indexPath.row]
+                present(scene, animated: true)
+                
+            case "drink" :
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.menu = bestSellers[indexPath.row]
+                present(scene, animated: true)
+                
+            case "cake" :
+                let scene = storyboard?.instantiateViewController(withIdentifier: CakeMenuDetailViewController.identifier) as! CakeMenuDetailViewController
+                scene.menu = bestSellers[indexPath.row]
+                present(scene, animated: true)
+                
+            case "snack":
+                let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.menu = bestSellers[indexPath.row]
+                present(scene, animated: true)
+                
+            case "food":
+                let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.menu = bestSellers[indexPath.row]
+                present(scene, animated: true)
+                
+            default:
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.menu = bestSellers[indexPath.row]
+                present(scene, animated: true)
+            }
+            
+        case trendingsCollectionView:
+            
+            let item = trendings[indexPath.row]
+            
+            switch item.category {
+                
+            case "coffee" :
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.menu = trendings[indexPath.row]
+                present(scene, animated: true)
+                
+            case "drink" :
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.menu = trendings[indexPath.row]
+                present(scene, animated: true)
+                
+            case "cake" :
+                let scene = storyboard?.instantiateViewController(withIdentifier: CakeMenuDetailViewController.identifier) as! CakeMenuDetailViewController
+                scene.menu = trendings[indexPath.row]
+                present(scene, animated: true)
+                
+            case "snack":
+                let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.menu = trendings[indexPath.row]
+                present(scene, animated: true)
+                
+            case "food":
+                let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.menu = trendings[indexPath.row]
+                present(scene, animated: true)
+                
+            default:
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.menu = trendings[indexPath.row]
+                present(scene, animated: true)
+            }
             
         default:
             return
