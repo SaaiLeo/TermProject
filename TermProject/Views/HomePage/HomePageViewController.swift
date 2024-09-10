@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 var menus: [Menu] = []
 
@@ -13,8 +15,8 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellerCollectionView: UICollectionView!
+    @IBOutlet weak var usernameLabel: UILabel!
     
-
     
     var categories: [MenuCategory] = []
     
@@ -46,6 +48,25 @@ class HomePageViewController: UIViewController {
         
         bestSellers = menus.filter{ $0.popularity == "bestSeller" }
         registerCell()
+        
+        
+        // change username according to logIn
+        if let user = Auth.auth().currentUser {
+            let db = Firestore.firestore()
+            let userId = user.uid
+            
+            db.collection("users").document(userId).getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    let name = data?["name"] as? String
+                    self.usernameLabel.text = name
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+        
+        
     }
     
     private func registerCell() {
