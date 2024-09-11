@@ -9,6 +9,7 @@ import UIKit
 import Foundation
 
 var CART: [Order] = []
+var HISTORY: [OrderList] = []
 
 class CartPageViewController: UIViewController, CALayerDelegate {
     
@@ -23,13 +24,19 @@ class CartPageViewController: UIViewController, CALayerDelegate {
         super.viewDidLoad()
         
         registerCells()
-        CART.append(Order(image:"french_fries", name: "French Fries", total: 3, sweetnessLvl: "", size: "Small", quantity: 3))
-        CART.append(Order(image:"french_fries", name: "French Fries", total: 2, sweetnessLvl: "", size: "Large", quantity: 2))
-        CART.append(Order(image:"french_fries", name: "French Fries", total: 1, sweetnessLvl: "", size: "Normal", quantity: 1))
-        
+//        CART.append(Order(image:"french_fries", name: "French Fries", total: 3, sweetnessLvl: "", size: "Small", quantity: 3))
+//        CART.append(Order(image:"french_fries", name: "French Fries", total: 2, sweetnessLvl: "", size: "Large", quantity: 2))
+//        CART.append(Order(image:"french_fries", name: "French Fries", total: 1, sweetnessLvl: "", size: "Normal", quantity: 1))
+//        
         calculateTotalInCart()
         totalLabel.text = "\(total)"
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+        calculateTotalInCart()
+        totalLabel.text = "\(total)"
     }
     
     private func registerCells() {
@@ -46,11 +53,15 @@ class CartPageViewController: UIViewController, CALayerDelegate {
     @IBAction func orderButtonClicked (_ sender : UIButton) {
         let orderlist = OrderList(time: .now , total: self.total , orderList: CART)
         CART = []
-        print("Order List:" , orderlist)
-        print("CART: ", CART)
+        HISTORY.append(orderlist)
         tableView.reloadData()
         calculateTotalInCart()
         totalLabel.text = "\(total)"
+        for i in HISTORY {
+            print(i)
+            print("__________")
+        }
+        print("************************")
     }
 }
 
