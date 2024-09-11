@@ -80,7 +80,6 @@ class HomePageViewController: UIViewController {
             
             // Get the current hour as a string
             let hourString = dateFormatter.string(from: currentDate)
-            print("Hour String: \(hourString)") // Debug print
             
             // Safely convert the hour string to an integer
             guard let currentHour = Int(hourString) else {
