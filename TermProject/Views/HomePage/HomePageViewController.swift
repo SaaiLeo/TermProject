@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 import Foundation
+
 
 var menus: [Menu] = []
 
@@ -14,11 +17,14 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var bestSellerCollectionView: UICollectionView!
+
+    @IBOutlet weak var usernameLabel: UILabel!
+
     @IBOutlet weak var trendingsCollectionView: UICollectionView!
     
     @IBOutlet weak var greetingMsgLabel: UILabel!
-    
 
+    
     
     var categories: [MenuCategory] = []
     var bestSellers: [Menu] = []
@@ -50,6 +56,24 @@ class HomePageViewController: UIViewController {
         bestSellers = menus.filter{ $0.popularity == "bestSeller" }
         trendings = menus.filter{ $0.popularity == "trending" }
         registerCell()
+        
+        
+        // change username according to logIn
+        if let user = Auth.auth().currentUser {
+            let db = Firestore.firestore()
+            let userId = user.uid
+            
+            db.collection("users").document(userId).getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let data = document.data()
+                    let name = data?["name"] as? String
+                    self.usernameLabel.text = name
+                } else {
+                    print("Document does not exist")
+                }
+            }
+        }
+
         greetingBasedOnTime(in: "Asia/Bangkok")
         
     }
