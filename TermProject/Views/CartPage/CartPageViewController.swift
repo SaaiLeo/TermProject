@@ -57,11 +57,6 @@ class CartPageViewController: UIViewController, CALayerDelegate {
         tableView.reloadData()
         calculateTotalInCart()
         totalLabel.text = "\(total)"
-        for i in HISTORY {
-            print(i)
-            print("__________")
-        }
-        print("************************")
     }
 }
 
