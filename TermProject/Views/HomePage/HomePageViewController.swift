@@ -34,11 +34,11 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Coffee"))
-        categories.append(MenuCategory(id: "id2", image: "cupcake", title: "Cake"))
-        categories.append(MenuCategory(id: "id2", image: "cappuccino", title: "Food"))
-        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Snack"))
-        categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Drink"))
+        categories.append(MenuCategory(id: "id1", image: "category_coffee", title: "coffee"))
+        categories.append(MenuCategory(id: "id2", image: "category_cake", title: "cake"))
+        categories.append(MenuCategory(id: "id3", image: "category_meal", title: "meal"))
+        categories.append(MenuCategory(id: "id4", image: "category_icecream", title: "icecream"))
+        categories.append(MenuCategory(id: "id5", image: "category_drink", title: "drink"))
      
         if let jsonFile = readJSONFile(named: "CoffeeShopMenu", withExtension: "json") {
             MENUS = jsonFile.menus
@@ -185,8 +185,22 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         case categoryCollectionView:
             let scene = storyboard?.instantiateViewController(withIdentifier: MenuPageViewController.identifier) as! MenuPageViewController
             
-            scene.modalPresentationStyle = .fullScreen
-            present(scene, animated: true)
+            switch categories[indexPath.row].title {
+            case "coffee":
+                scene.menus = MENUS.filter{ $0.category == "coffee"}
+            case "drink":
+                scene.menus = MENUS.filter{ $0.category == "drink"}
+            case "meal":
+                scene.menus = MENUS.filter{ $0.category == "meal"}
+            case "cake":
+                scene.menus = MENUS.filter{ $0.category == "cake"}
+            case "icecream":
+                scene.menus = MENUS.filter{ $0.category == "icecream"}
+            default:
+                scene.menus = []
+            }
+            
+            navigationController?.pushViewController(scene, animated: true)
             
         case bestSellerCollectionView:
             

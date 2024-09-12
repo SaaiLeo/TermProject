@@ -17,7 +17,10 @@ class MenuPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        menus = MENUS
+        
+        if menus.isEmpty {
+            menus = MENUS
+        }
         registerCell()
     }
     
