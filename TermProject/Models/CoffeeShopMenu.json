@@ -5,7 +5,7 @@
             "price": "100",
             "image": "burger_spheal",
             "category": "meal",
-            "popularity": "popular",
+            "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -30,7 +30,7 @@
             "price": "$1.99",
             "image": "cake_crustle",
             "category": "cake",
-            "popularity": "bestSeller",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Normal",
@@ -43,7 +43,7 @@
             "price": "$3.99",
             "image": "coffee_burbasaur",
             "category": "coffee",
-            "popularity": "bestSeller",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -68,7 +68,7 @@
             "price": "$3.99",
             "image": "coffee_jigglypuff",
             "category": "coffee",
-            "popularity": "bestSeller",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -93,7 +93,7 @@
             "price": "$3.99",
             "image": "coffee_magnemite",
             "category": "coffee",
-            "popularity": "bestSeller",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -118,7 +118,7 @@
             "price": "$4.29",
             "image": "coffee_meowth",
             "category": "coffee",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -143,7 +143,7 @@
             "price": "$2.49",
             "image": "coffee_ninetails",
             "category": "coffee",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -168,7 +168,7 @@
             "price": "$2.99",
             "image": "coffee_pikachu",
             "category": "coffee",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -193,7 +193,7 @@
             "price": "$2.79",
             "image": "coffee_snorlax",
             "category": "coffee",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -218,7 +218,7 @@
             "price": "$4.49",
             "image": "cupcake_piplup",
             "category": "cake",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -231,7 +231,7 @@
             "price": "$2.79",
             "image": "drink_pipalop",
             "category": "drink",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -256,7 +256,7 @@
             "price": "$2.79",
             "image": "drink_sylveon",
             "category": "drink",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -406,7 +406,7 @@
             "price": "$2.79",
             "image": "jelly_psyduck",
             "category": "",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -431,7 +431,7 @@
             "price": "$2.79",
             "image": "macaron_burbasaur",
             "category": "cake",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -444,7 +444,7 @@
             "price": "$2.79",
             "image": "macaron_shellda",
             "category": "cake",
-            "popularity": "trending",
+            "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -457,7 +457,7 @@
             "price": "$2.79",
             "image": "macaron_torchic",
             "category": "cake",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -470,7 +470,7 @@
             "price": "$2.79",
             "image": "tart_mudkip",
             "category": "cake",
-            "popularity": "trending",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -482,8 +482,8 @@
             "name": "Charmandar meal",
             "price": "$2.79",
             "image": "meal_charmandar",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -507,8 +507,8 @@
             "name": "Evee meal",
             "price": "$2.79",
             "image": "meal_eevee",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -532,8 +532,8 @@
             "name": "Glaceon meal",
             "price": "$2.79",
             "image": "meal_glaceon",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -557,8 +557,8 @@
             "name": "Jigglypuff meal",
             "price": "$2.79",
             "image": "meal_jigglypuff",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -582,8 +582,8 @@
             "name": "Magikarp meal",
             "price": "$2.79",
             "image": "meal_magikarp",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -607,8 +607,8 @@
             "name": "Meowth meal",
             "price": "$2.79",
             "image": "meal_meowth",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -632,8 +632,8 @@
             "name": "Mimikyu meal",
             "price": "$2.79",
             "image": "meal_mimikyu",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -657,8 +657,8 @@
             "name": "Pikachu meal",
             "price": "$2.79",
             "image": "meal_pikachu",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
@@ -682,8 +682,8 @@
             "name": "Squirtle meal",
             "price": "$2.79",
             "image": "meal_squirtle",
-            "category": "",
-            "popularity": "trending",
+            "category": "meal",
+            "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
