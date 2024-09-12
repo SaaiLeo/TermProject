@@ -29,6 +29,10 @@
 		B33C074A2C91606D003874D1 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C07492C91606D003874D1 /* ProfilePageViewController.swift */; };
 		B33C074D2C91BBC4003874D1 /* CoffeeShopMenu.json in Resources */ = {isa = PBXBuildFile; fileRef = B33C074C2C91BBC4003874D1 /* CoffeeShopMenu.json */; };
 		B33C074F2C92B920003874D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C074E2C92B920003874D1 /* User.swift */; };
+		B33C07522C9367EA003874D1 /* MapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C07512C9367EA003874D1 /* MapPageViewController.swift */; };
+		B33C07552C936846003874D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33C07542C936846003874D1 /* MapKit.framework */; };
+		B33C07572C9369D0003874D1 /* ShopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33C07562C9369D0003874D1 /* ShopLocation.swift */; };
+		B33C07592C93708B003874D1 /* pokeshopLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = B33C07582C93708B003874D1 /* pokeshopLocation.json */; };
 		B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */; };
 		B35194602C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */; };
 		B35194622C8EDFCF003B113F /* CakeMenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */; };
@@ -72,6 +76,10 @@
 		B33C07492C91606D003874D1 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		B33C074C2C91BBC4003874D1 /* CoffeeShopMenu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoffeeShopMenu.json; sourceTree = "<group>"; };
 		B33C074E2C92B920003874D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B33C07512C9367EA003874D1 /* MapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewController.swift; sourceTree = "<group>"; };
+		B33C07542C936846003874D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B33C07562C9369D0003874D1 /* ShopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLocation.swift; sourceTree = "<group>"; };
+		B33C07582C93708B003874D1 /* pokeshopLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokeshopLocation.json; sourceTree = "<group>"; };
 		B34017CA2C8ACEFB0064E856 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		B351945F2C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonDrinkMenuDetailViewController.swift; sourceTree = "<group>"; };
 		B35194612C8EDFCF003B113F /* CakeMenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeMenuDetailViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +101,7 @@
 				FA946E612C8B39A2004A29C9 /* FirebaseDatabase in Frameworks */,
 				FA946E652C8B39A2004A29C9 /* FirebaseStorage in Frameworks */,
 				FAAB65C22C9098BC003F7E3B /* GoogleSignInSwift in Frameworks */,
+				B33C07552C936846003874D1 /* MapKit.framework in Frameworks */,
 				FA946E5F2C8B39A2004A29C9 /* FirebaseAuth in Frameworks */,
 				FA946E632C8B39A2004A29C9 /* FirebaseFirestore in Frameworks */,
 			);
@@ -106,6 +115,7 @@
 			children = (
 				B33812BD2C899F7300696E61 /* TermProject */,
 				B33812BC2C899F7300696E61 /* Products */,
+				B33C07532C936846003874D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				B33C074C2C91BBC4003874D1 /* CoffeeShopMenu.json */,
+				B33C07582C93708B003874D1 /* pokeshopLocation.json */,
+				B33C07562C9369D0003874D1 /* ShopLocation.swift */,
 				B33812DD2C89A80600696E61 /* OnBoardingSlide.swift */,
 				B33812ED2C89D9EC00696E61 /* MenuCategory.swift */,
 				B33812F72C89F91300696E61 /* Menu.swift */,
@@ -151,6 +163,7 @@
 		B33812D32C89A37500696E61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B33C07502C9367D7003874D1 /* MapPage */,
 				B33C074B2C916076003874D1 /* ProfilePage */,
 				B3679E9F2C900EFF000F9F24 /* CartPage */,
 				B33812FF2C8A0DF600696E61 /* MenuPage */,
@@ -268,6 +281,22 @@
 			path = ProfilePage;
 			sourceTree = "<group>";
 		};
+		B33C07502C9367D7003874D1 /* MapPage */ = {
+			isa = PBXGroup;
+			children = (
+				B33C07512C9367EA003874D1 /* MapPageViewController.swift */,
+			);
+			path = MapPage;
+			sourceTree = "<group>";
+		};
+		B33C07532C936846003874D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B33C07542C936846003874D1 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B3679E9F2C900EFF000F9F24 /* CartPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B33812EB2C89D86000696E61 /* CategoryCollectionViewCell.xib in Resources */,
+				B33C07592C93708B003874D1 /* pokeshopLocation.json in Resources */,
 				B33812C82C899F7400696E61 /* Assets.xcassets in Resources */,
 				B33C074D2C91BBC4003874D1 /* CoffeeShopMenu.json in Resources */,
 				B33812F52C89F55B00696E61 /* MenuCollectionViewCell.xib in Resources */,
@@ -387,12 +417,14 @@
 				B33813012C8A0E8900696E61 /* MenuPageViewController.swift in Sources */,
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
 				FA946E5C2C8B381D004A29C9 /* SignUpViewController.swift in Sources */,
+				B33C07572C9369D0003874D1 /* ShopLocation.swift in Sources */,
 				B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */,
 				B35194602C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift in Sources */,
 				B35194622C8EDFCF003B113F /* CakeMenuDetailViewController.swift in Sources */,
 				B33812EE2C89D9EC00696E61 /* MenuCategory.swift in Sources */,
 				B34017CB2C8ACEFB0064E856 /* MenuDetailViewController.swift in Sources */,
 				B33812EC2C89D86000696E61 /* CategoryCollectionViewCell.swift in Sources */,
+				B33C07522C9367EA003874D1 /* MapPageViewController.swift in Sources */,
 				B3679EA92C901019000F9F24 /* CartItemTableViewCell.swift in Sources */,
 				B33812E62C89D15C00696E61 /* HomePageViewController.swift in Sources */,
 				B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */,

@@ -34,6 +34,7 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        categories.append(MenuCategory(id: "id0", image: "pokeball", title: "Near me"))
         categories.append(MenuCategory(id: "id1", image: "category_coffee", title: "coffee"))
         categories.append(MenuCategory(id: "id2", image: "category_cake", title: "cake"))
         categories.append(MenuCategory(id: "id3", image: "category_meal", title: "meal"))
@@ -183,24 +184,31 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
         
         switch collectionView{
         case categoryCollectionView:
-            let scene = storyboard?.instantiateViewController(withIdentifier: MenuPageViewController.identifier) as! MenuPageViewController
             
-            switch categories[indexPath.row].title {
-            case "coffee":
-                scene.menus = MENUS.filter{ $0.category == "coffee"}
-            case "drink":
-                scene.menus = MENUS.filter{ $0.category == "drink"}
-            case "meal":
-                scene.menus = MENUS.filter{ $0.category == "meal"}
-            case "cake":
-                scene.menus = MENUS.filter{ $0.category == "cake"}
-            case "icecream":
-                scene.menus = MENUS.filter{ $0.category == "icecream"}
-            default:
-                scene.menus = []
+            if categories[indexPath.row].title == "Near me" {
+                let scene = storyboard?.instantiateViewController(identifier: MapPageViewController.identifier) as! MapPageViewController
+                
+                navigationController?.pushViewController(scene, animated: true)
+            }else{
+                let scene = storyboard?.instantiateViewController(withIdentifier: MenuPageViewController.identifier) as! MenuPageViewController
+                
+                switch categories[indexPath.row].title {
+                case "coffee":
+                    scene.menus = MENUS.filter{ $0.category == "coffee"}
+                case "drink":
+                    scene.menus = MENUS.filter{ $0.category == "drink"}
+                case "meal":
+                    scene.menus = MENUS.filter{ $0.category == "meal"}
+                case "cake":
+                    scene.menus = MENUS.filter{ $0.category == "cake"}
+                case "icecream":
+                    scene.menus = MENUS.filter{ $0.category == "icecream"}
+                default:
+                    scene.menus = []
+                }
+                
+                navigationController?.pushViewController(scene, animated: true)
             }
-            
-            navigationController?.pushViewController(scene, animated: true)
             
         case bestSellerCollectionView:
             

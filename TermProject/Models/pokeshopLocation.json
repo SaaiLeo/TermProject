@@ -1,0 +1,32 @@
+{
+    "ShopLocations": [
+	 {
+		 "name" : "Snorlax Pokeshop",
+         "openingHours" : "9Am - 9PM",
+		 "logo" : "pokeball",
+		 "LocationLat" : 13.611869,
+		 "LocationLong" : 100.837477
+	 },
+	{
+		 "name" : "Pikachu Pokeshop",
+         "openingHours" : "9Am - 9PM",
+		 "logo" : "pokeball",
+		 "LocationLat" : 13.612766,
+		 "LocationLong" : 100.840549
+	},
+	{
+		 "name" : "Eevee Pokeshop",
+         "openingHours" : "9Am - 9PM",
+		 "logo" : "pokeball",
+		 "LocationLat" : 13.612125,
+		 "LocationLong" : 100.835519,
+	},
+	{
+		 "name" : "Mimikyu Pokeshop",
+         "openingHours" : "9Am - 9PM",
+		 "logo" : "pokeball",
+		 "LocationLat" : 13.613145,
+		 "LocationLong" : 100.835811
+	}
+    ]
+}
