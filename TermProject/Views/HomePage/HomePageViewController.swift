@@ -11,7 +11,7 @@ import FirebaseFirestore
 import Foundation
 
 
-var menus: [Menu] = []
+var MENUS: [Menu] = []
 
 class HomePageViewController: UIViewController {
     
@@ -24,6 +24,7 @@ class HomePageViewController: UIViewController {
     
     @IBOutlet weak var greetingMsgLabel: UILabel!
 
+    @IBOutlet weak var cartBarButton: UIBarButtonItem!
     
     
     var categories: [MenuCategory] = []
@@ -38,23 +39,12 @@ class HomePageViewController: UIViewController {
         categories.append(MenuCategory(id: "id2", image: "cappuccino", title: "Food"))
         categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Snack"))
         categories.append(MenuCategory(id: "id1", image: "cappuccino", title: "Drink"))
-        
-        menus.append(Menu(name: "Cuppuccino", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Brownie Cupcake", price: "$1.99", image: "cupcake", category: "cake", popularity: "bestSeller", sizePrice: [SizePrice(size: "Normal", price: 1.99)]))
-        menus.append(Menu(name: "Orange", price: "$3.99", image: "orange_juice", category: "drink", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Caesar Salad", price: "$3.99", image: "caesar_salad", category: "food", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "French Fries", price: "$3.99", image: "french_fries", category: "snack", popularity: "bestSeller", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        menus.append(Menu(name: "Cuppuccino4", price: "$3.99", image: "cappuccino", category: "coffee", popularity: "trending", sizePrice: [SizePrice(size: "Small", price: 3.99), SizePrice(size: "Medium", price: 4.99), SizePrice(size: "Large", price: 5.99), SizePrice(size: "Extra Large", price: 6.99)]))
-        
-        bestSellers = menus.filter{ $0.popularity == "bestSeller" }
-        trendings = menus.filter{ $0.popularity == "trending" }
+     
+        if let jsonFile = readJSONFile(named: "CoffeeShopMenu", withExtension: "json") {
+            MENUS = jsonFile.menus
+        }
+        bestSellers = MENUS.filter{ $0.popularity == "bestSeller" }
+        trendings = MENUS.filter{ $0.popularity == "trending" }
         registerCell()
         
         
@@ -127,7 +117,25 @@ class HomePageViewController: UIViewController {
         greetingMsgLabel.text = msg
     }
     
-    
+    // Function to read JSON file from the app bundle
+    func readJSONFile(named fileName: String, withExtension fileExtension: String) -> Menus? {
+        // Locate the file in the bundle
+        if let fileURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension) {
+            do {
+                // Read the data from the file
+                let data = try Data(contentsOf: fileURL)
+                // Decode the data to the AppInfo struct
+                let appInfo = try JSONDecoder().decode(Menus.self, from: data)
+                return appInfo
+            } catch {
+                print("Error reading or decoding file: \(error.localizedDescription)")
+            }
+        } else {
+            print("File not found.")
+        }
+        return nil
+    }
+
 }
 
 extension HomePageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -201,12 +209,12 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
-            case "snack":
+            case "icecream":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
-            case "food":
+            case "meal":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
@@ -238,12 +246,12 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
-            case "snack":
+            case "icecream":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
-            case "food":
+            case "meal":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)

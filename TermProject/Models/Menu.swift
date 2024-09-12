@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Menu {
+struct Menu : Codable {
     let name: String
     let price: String
     let image: String
@@ -21,7 +21,11 @@ struct Menu {
 }
 
 
-struct SizePrice {
+struct SizePrice: Codable {
     let size: String
     let price: Double
+}
+
+struct Menus : Codable {
+    let menus: [Menu]
 }
