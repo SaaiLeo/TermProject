@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B319BAAF2C93EA7E00D521ED /* shakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B319BAAE2C93EA7E00D521ED /* shakeAnimation.swift */; };
 		B33812BF2C899F7300696E61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812BE2C899F7300696E61 /* AppDelegate.swift */; };
 		B33812C12C899F7300696E61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33812C02C899F7300696E61 /* SceneDelegate.swift */; };
 		B33812C62C899F7300696E61 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B33812C52C899F7300696E61 /* Base */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B319BAAE2C93EA7E00D521ED /* shakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shakeAnimation.swift; sourceTree = "<group>"; };
 		B33812BB2C899F7300696E61 /* TermProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33812BE2C899F7300696E61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B33812C02C899F7300696E61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B319BAAA2C93E56B00D521ED /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				B319BAAB2C93E57B00D521ED /* CartAnimation */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		B319BAAB2C93E57B00D521ED /* CartAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				B319BAAE2C93EA7E00D521ED /* shakeAnimation.swift */,
+			);
+			path = CartAnimation;
+			sourceTree = "<group>";
+		};
 		B33812B22C899F7300696E61 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 		B33812BD2C899F7300696E61 /* TermProject */ = {
 			isa = PBXGroup;
 			children = (
+				B319BAAA2C93E56B00D521ED /* Animations */,
 				B33812D82C89A3FE00696E61 /* Extensions */,
 				B33812D42C89A37B00696E61 /* CustomViews */,
 				B33812D32C89A37500696E61 /* Views */,
@@ -418,6 +437,7 @@
 				B33812DA2C89A41000696E61 /* UIView+Extension.swift in Sources */,
 				FA946E5C2C8B381D004A29C9 /* SignUpViewController.swift in Sources */,
 				B33C07572C9369D0003874D1 /* ShopLocation.swift in Sources */,
+				B319BAAF2C93EA7E00D521ED /* shakeAnimation.swift in Sources */,
 				B33812DC2C89A63900696E61 /* OnBoardingCollectionViewCell.swift in Sources */,
 				B35194602C8EDC5F003B113F /* NonDrinkMenuDetailViewController.swift in Sources */,
 				B35194622C8EDFCF003B113F /* CakeMenuDetailViewController.swift in Sources */,

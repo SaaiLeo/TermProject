@@ -11,6 +11,8 @@ class MenuDetailViewController: UIViewController {
     
     static let identifier = String(describing: MenuDetailViewController.self)
     
+    var onCartUpdated: (() -> Void)?
+    
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -101,6 +103,7 @@ class MenuDetailViewController: UIViewController {
         let order = Order(image: menu.image, name: menu.name, total: Double(String(format: "%.2f",self.total))!, sweetnessLvl: self.sweetnessLvl, size: self.size, quantity: self.quantity)
         self.dismiss(animated: true, completion: {
             CART.append(order)
+            self.onCartUpdated?()
         })
     }
     

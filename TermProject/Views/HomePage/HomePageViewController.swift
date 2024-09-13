@@ -23,8 +23,6 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var trendingsCollectionView: UICollectionView!
     
     @IBOutlet weak var greetingMsgLabel: UILabel!
-
-    @IBOutlet weak var cartBarButton: UIBarButtonItem!
     
     
     var categories: [MenuCategory] = []
@@ -34,13 +32,23 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let button = UIButton(type: .system)
+        let cartImage = UIImage(systemName: "cart.fill")?.withRenderingMode(.alwaysTemplate)
+        button.setImage(cartImage, for: .normal)
+        button.tintColor = #colorLiteral(red: 0.5215935111, green: 0.3794919848, blue: 0.2661398649, alpha: 1)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        button.addTarget(self, action: #selector(cartButtonClicked), for: .touchUpInside)
+         
+         let barButtonItem = UIBarButtonItem(customView: button)
+         self.navigationItem.rightBarButtonItem = barButtonItem
+        
         categories.append(MenuCategory(id: "id0", image: "pokeball", title: "Near me"))
         categories.append(MenuCategory(id: "id1", image: "category_coffee", title: "coffee"))
         categories.append(MenuCategory(id: "id2", image: "category_cake", title: "cake"))
         categories.append(MenuCategory(id: "id3", image: "category_meal", title: "meal"))
         categories.append(MenuCategory(id: "id4", image: "category_icecream", title: "icecream"))
         categories.append(MenuCategory(id: "id5", image: "category_drink", title: "drink"))
-     
+        
         if let jsonFile = readJSONFile(named: "CoffeeShopMenu", withExtension: "json") {
             MENUS = jsonFile.menus
         }
@@ -67,6 +75,16 @@ class HomePageViewController: UIViewController {
 
         greetingBasedOnTime(in: "Asia/Bangkok")
         
+    }
+    
+    @objc func cartButtonClicked() {
+        let scene = storyboard?.instantiateViewController(identifier: CartPageViewController.identifier) as! CartPageViewController
+        
+        navigationController?.pushViewController(scene, animated: true)
+    }
+    
+    func cartAnimate() {
+        navigationItem.rightBarButtonItem?.shakeAnimation()
     }
     
     private func registerCell() {
@@ -218,31 +236,49 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
                 
             case "coffee" :
                 let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
             case "drink" :
                 let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
             case "cake" :
                 let scene = storyboard?.instantiateViewController(withIdentifier: CakeMenuDetailViewController.identifier) as! CakeMenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
             case "icecream":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
             case "meal":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
                 
             default:
                 let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = bestSellers[indexPath.row]
                 present(scene, animated: true)
             }
@@ -255,31 +291,49 @@ extension HomePageViewController: UICollectionViewDelegate, UICollectionViewData
                 
             case "coffee" :
                 let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
             case "drink" :
                 let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
             case "cake" :
                 let scene = storyboard?.instantiateViewController(withIdentifier: CakeMenuDetailViewController.identifier) as! CakeMenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
             case "icecream":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
             case "meal":
                 let scene = storyboard?.instantiateViewController(withIdentifier: NonDrinkMenuDetailViewController.identifier) as! NonDrinkMenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
                 
             default:
                 let scene = storyboard?.instantiateViewController(withIdentifier: MenuDetailViewController.identifier) as! MenuDetailViewController
+                scene.onCartUpdated = {
+                    [weak self] in self?.cartAnimate()
+                }
                 scene.menu = trendings[indexPath.row]
                 present(scene, animated: true)
             }
