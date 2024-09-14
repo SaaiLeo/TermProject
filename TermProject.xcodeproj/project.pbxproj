@@ -49,6 +49,7 @@
 		FAAB65C02C9098BC003F7E3B /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = FAAB65BF2C9098BC003F7E3B /* GoogleSignIn */; };
 		FAAB65C22C9098BC003F7E3B /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FAAB65C12C9098BC003F7E3B /* GoogleSignInSwift */; };
 		FAAB65C42C909C46003F7E3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAAB65C32C909C46003F7E3B /* GoogleService-Info.plist */; };
+		FAB3BACD2C959472006DC37B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3BACC2C959472006DC37B /* EditProfileViewController.swift */; };
 		FAE8AB0A2C8B2DBA00889425 /* HistoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8AB092C8B2DBA00889425 /* HistoryPageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		B3B5803B2C8C931900CDB83F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAAB65C32C909C46003F7E3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAB3BACC2C959472006DC37B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		FAE8AB092C8B2DBA00889425 /* HistoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryPageViewController.swift; path = TermProject/HistoryPageViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				B33C07492C91606D003874D1 /* ProfilePageViewController.swift */,
+				FAB3BACC2C959472006DC37B /* EditProfileViewController.swift */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				B33812DE2C89A80600696E61 /* OnBoardingSlide.swift in Sources */,
 				B3B5803C2C8C931900CDB83F /* Order.swift in Sources */,
 				B33812E32C89C2C900696E61 /* LoginPageViewController.swift in Sources */,
+				FAB3BACD2C959472006DC37B /* EditProfileViewController.swift in Sources */,
 				B3679EA32C900F1A000F9F24 /* CartPageViewController.swift in Sources */,
 				B33812F82C89F91300696E61 /* Menu.swift in Sources */,
 				B33812F12C89DECE00696E61 /* CardView.swift in Sources */,
