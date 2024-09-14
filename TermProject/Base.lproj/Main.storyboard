@@ -537,16 +537,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cafe Shop" id="wmg-wg-GNx">
                         <barButtonItem key="backBarButtonItem" title="Home" id="RHf-d1-wvV"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" id="WUg-if-CRu">
-                            <color key="tintColor" red="0.5" green="0.38528584989999998" blue="0.28287024910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <segue destination="kxh-B2-4ch" kind="show" id="iN3-bp-ZxB"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bestSellerCollectionView" destination="a9e-xO-EFG" id="dk4-Lg-3VQ"/>
-                        <outlet property="cartBarButton" destination="WUg-if-CRu" id="0qz-La-4qs"/>
                         <outlet property="categoryCollectionView" destination="QKO-c4-cOH" id="bxI-hf-TB6"/>
                         <outlet property="greetingMsgLabel" destination="NWd-M7-tuE" id="vTk-ii-eZA"/>
                         <outlet property="trendingsCollectionView" destination="7KW-JN-kOW" id="UtV-gz-5Lw"/>
@@ -566,7 +559,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5pW-rK-S20">
-                                <rect key="frame" x="0.0" y="103" width="393" height="566"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="kxh-B2-4ch" id="EbF-Tl-hJg"/>
@@ -574,7 +567,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFp-Sc-CfZ">
-                                <rect key="frame" x="0.0" y="669" width="393" height="100"/>
+                                <rect key="frame" x="0.0" y="718" width="393" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nmi-VQ-Wwe">
                                         <rect key="frame" x="40" y="18.333333333333371" width="313" height="65.666666666666671"/>
@@ -837,14 +830,7 @@
                             <constraint firstItem="Beo-DK-eEq" firstAttribute="leading" secondItem="FLd-Gg-roh" secondAttribute="leading" id="otX-Mx-SFR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="saL-Z8-PI5">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" id="El2-j8-yU1">
-                            <color key="tintColor" red="0.5" green="0.38528584989999998" blue="0.28287024910000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <segue destination="kxh-B2-4ch" kind="show" id="oDe-8r-kOH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="saL-Z8-PI5"/>
                     <connections>
                         <outlet property="collectionView" destination="Beo-DK-eEq" id="CbQ-jN-zCX"/>
                     </connections>
@@ -1481,11 +1467,7 @@
             <point key="canvasLocation" x="4427" y="-1085"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="iN3-bp-ZxB"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="clock.arrow.circlepath" catalog="system" width="128" height="112"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
@@ -1494,10 +1476,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
