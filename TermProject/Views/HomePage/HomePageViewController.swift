@@ -84,7 +84,7 @@ class HomePageViewController: UIViewController {
     }
     
     func cartAnimate() {
-        navigationItem.rightBarButtonItem?.shakeAnimation()
+        navigationItem.rightBarButtonItem?.rotateAnimation()
     }
     
     private func registerCell() {

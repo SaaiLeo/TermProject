@@ -45,7 +45,7 @@ class MenuPageViewController: UIViewController {
     }
     
     func cartAnimate() {
-        navigationItem.rightBarButtonItem?.shakeAnimation()
+        navigationItem.rightBarButtonItem?.rotateAnimation()
     }
     
 }
