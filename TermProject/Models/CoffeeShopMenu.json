@@ -27,14 +27,14 @@
         },
         {
             "name": "Crustle Cake",
-            "price": "$1.99",
+            "price": "55",
             "image": "cake_crustle",
             "category": "cake",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Normal",
-                    "price": 1.99
+                    "price": 55.0
                 }
             ]
         },
@@ -47,94 +47,94 @@
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 3.99
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 4.99
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 5.99
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
         {
             "name": "Jigglypuff Coffee",
-            "price": "$3.99",
+            "price": "100",
             "image": "coffee_jigglypuff",
             "category": "coffee",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 3.99
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 4.99
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 5.99
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
         {
             "name": "Magnemite coffee",
-            "price": "$3.99",
+            "price": "100",
             "image": "coffee_magnemite",
             "category": "coffee",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 3.99
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 4.99
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 5.99
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
         {
             "name": "Meowth coffee",
-            "price": "$4.29",
+            "price": "100",
             "image": "coffee_meowth",
             "category": "coffee",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
