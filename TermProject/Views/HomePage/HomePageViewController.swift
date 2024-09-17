@@ -5,6 +5,7 @@
 //  Created by Sei Mouk on 5/9/24.
 //
 
+import Alamofire
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
@@ -48,15 +49,23 @@ class HomePageViewController: UIViewController {
         categories.append(MenuCategory(id: "id3", image: "category_meal", title: "meal"))
         categories.append(MenuCategory(id: "id4", image: "category_icecream", title: "icecream"))
         categories.append(MenuCategory(id: "id5", image: "category_drink", title: "drink"))
+              
+//        if let jsonFile = readJSONFile(named: "CoffeeShopMenu", withExtension: "json") {
+//            MENUS = jsonFile.menus
+//        }
+
+
         
-        if let jsonFile = readJSONFile(named: "CoffeeShopMenu", withExtension: "json") {
-            MENUS = jsonFile.menus
-        }
-        bestSellers = MENUS.filter{ $0.popularity == "bestSeller" }
-        trendings = MENUS.filter{ $0.popularity == "trending" }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         registerCell()
-        
-        
+        changingUsername()
+        fetchingMenu()
+        greetingBasedOnTime(in: "Asia/Bangkok")
+    }
+    
+    private func changingUsername() {
         // change username according to logIn
         if let user = Auth.auth().currentUser {
             let db = Firestore.firestore()
@@ -72,9 +81,30 @@ class HomePageViewController: UIViewController {
                 }
             }
         }
-
-        greetingBasedOnTime(in: "Asia/Bangkok")
-        
+    }
+    
+    private func fetchingMenu() {
+        AF.request("https://raw.githubusercontent.com/SaaiLeo/TermProject/main/TermProject/Models/CoffeeShopMenu.json").responseDecodable(of: Menus.self) { data in
+            switch data.result {
+            case .success(let menus):
+                MENUS = menus.menus
+                self.seperatePopularity()
+                self.updateUI()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func seperatePopularity() {
+        bestSellers = MENUS.filter{ $0.popularity == "bestSeller" }
+        print("bestSeller: \(bestSellers.count)")
+        trendings = MENUS.filter{ $0.popularity == "trending" }
+    }
+    
+    func updateUI() {
+        bestSellerCollectionView.reloadData()
+        trendingsCollectionView.reloadData()
     }
     
     @objc func cartButtonClicked() {
