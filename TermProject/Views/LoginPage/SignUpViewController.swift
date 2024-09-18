@@ -46,6 +46,10 @@ class SignUpViewController: UIViewController {
             showAlert(message: "Please enter your password.")
             return
         }
+        guard isValidPassword(password) else {
+            showAlert(message: "Password must be at least 6 characters long, contain at least one uppercase letter, one lowercase letter, and one number.")
+            return
+        }
         
         
         let alert = UIAlertController(title: "Create Account", message: "Would you like to create an account?", preferredStyle: .alert)
@@ -78,6 +82,16 @@ class SignUpViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func isValidPassword(_ password: String) -> Bool {
+        let lengthRequirement = password.count >= 6
+        let uppercaseRequirement = password.rangeOfCharacter(from: .uppercaseLetters) != nil
+        let lowercaseRequirement = password.rangeOfCharacter(from: .lowercaseLetters) != nil
+        let numberRequirement = password.rangeOfCharacter(from: .decimalDigits) != nil
+        
+        return lengthRequirement && uppercaseRequirement && lowercaseRequirement && numberRequirement
+    }
+
     
     
     func showAlert(message: String) {
