@@ -1,4 +1,4 @@
-//
+    //
 //  HistoryPageViewController.swift
 //  TermProject
 //
@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class HistoryPageViewController: UIViewController {
     
@@ -18,7 +20,56 @@ class HistoryPageViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchOrderHistoryFromfirestore()
         tableView.reloadData()
+    }
+    
+    private func fetchOrderHistoryFromfirestore() {
+        let db = Firestore.firestore()
+        
+        HISTORY = []
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("Error: No user logged in")
+            return
+        }
+        
+        db.collection("orders")
+            .whereField("userId", isEqualTo: userId)
+            .getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching order history: \(error)")
+            }else{
+                guard let documents = querySnapshot?.documents else { return }
+                
+                for document in documents {
+                    let data = document.data()
+                    let timestamp = data["time"] as? Timestamp ?? Timestamp(date: Date())
+                    let total = data["total"] as? Double ?? 0.0
+                    let orderListData = data["orderList"] as? [[String: Any]] ?? []
+                    
+                    var orderList: [Order] = []
+                    
+                    for orderData in orderListData {
+                        let image = orderData["image"] as? String ?? ""
+                        let name = orderData["name"] as? String ?? ""
+                        let total = orderData["total"] as? Double ?? 0.0
+                        let sweetnessLvl = orderData["sweetnessLvl"] as? String ?? ""
+                        let size = orderData["size"] as? String ?? ""
+                        let quantity = orderData["quantity"] as? Int ?? 0
+                        
+                        let order = Order(image: image, name: name, total: total, sweetnessLvl: sweetnessLvl, size: size, quantity: quantity)
+                        orderList.append(order)
+                    }
+                    
+                    let orderListObj = OrderList(time: timestamp.dateValue(), total: total, orderList: orderList)
+                    HISTORY.append(orderListObj)
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func registerCell() {
