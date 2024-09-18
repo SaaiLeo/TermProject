@@ -20,19 +20,26 @@ class LoginPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if FirebaseAuth.Auth.auth().currentUser != nil {
-            navigateToHomeScreen()
-        }
-        
         configureGoogleSignIn()
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        if Auth.auth().currentUser != nil {
+            navigateToHomeScreen()
+        }
+    }
+    
     
     @IBAction func logInBtnClicked(_ sender: UIButton) {
-        guard let email = emailTF.text else { return }
-        guard let password = passwordTF.text else { return }
+        guard let email = emailTF.text, !email.isEmpty,
+              let password = passwordTF.text, !password.isEmpty else {
+            showAlert(message: "Please enter email and password.")
+            return
+        }
         
         Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
             if let e = error {

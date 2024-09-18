@@ -7,6 +7,8 @@
 
 import UIKit
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
 
 var CART: [Order] = []
 var HISTORY: [OrderList] = []
@@ -51,12 +53,50 @@ class CartPageViewController: UIViewController, CALayerDelegate {
     }
     
     @IBAction func orderButtonClicked (_ sender : UIButton) {
+//        let orderlist = OrderList(time: .now , total: self.total , orderList: CART)
+//        CART = []
+//        HISTORY.append(orderlist)
+//        tableView.reloadData()
+//        calculateTotalInCart()
+//        totalLabel.text = "\(total)"
+        
+        let db = Firestore.firestore()
+        
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("Error: No user is logged in.")
+            return
+        }
+        
         let orderlist = OrderList(time: .now , total: self.total , orderList: CART)
-        CART = []
-        HISTORY.append(orderlist)
-        tableView.reloadData()
-        calculateTotalInCart()
-        totalLabel.text = "\(total)"
+        
+        let orderDict: [String: Any] = [
+            "userId": userId,  
+            "time": Timestamp(date: Date()),
+            "total": self.total,
+            "orderList": CART.map { order -> [String: Any] in
+                return [
+                    "image": order.image,
+                    "name": order.name,
+                    "total": order.total,
+                    "sweetnessLvl": order.sweetnessLvl,
+                    "size": order.size,
+                    "quantity": order.quantity
+                    ]
+                }
+            ]
+        
+        db.collection("orders").addDocument(data: orderDict) { error in
+            if let error = error {
+                print("Error adding document: \(error)")
+            } else {
+                CART = []
+                HISTORY.append(orderlist)
+                
+                self.tableView.reloadData()
+                self.calculateTotalInCart()
+                self.totalLabel.text = "\(self.total)"
+            }
+        }
     }
 }
 

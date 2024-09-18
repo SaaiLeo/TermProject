@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import GoogleSignIn
 
 class ProfilePageViewController: UIViewController {
 
@@ -40,6 +41,21 @@ class ProfilePageViewController: UIViewController {
     }
     
     @IBAction func logoutBtnClicked(_ sender: UIButton) {
+        let fireAuth = Auth.auth()
+        do {
+            try fireAuth.signOut()
+            GIDSignIn.sharedInstance.signOut()
+            
+            let loginPage = storyboard?.instantiateViewController(withIdentifier: LoginPageViewController.identifier) as! LoginPageViewController
+            
+            loginPage.modalPresentationStyle = .fullScreen
+            loginPage.modalTransitionStyle = .crossDissolve
+            present(loginPage, animated: true)
+            
+        } catch let signOutError as NSError {
+            print("Error signing out: \(signOutError.localizedDescription)")
+        }
+
     }
     
     
