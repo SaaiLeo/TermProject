@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Order {
+struct Order: Codable{
     let image: String
     let name: String
     let total: Double
@@ -16,7 +16,7 @@ struct Order {
     let quantity: Int
 }
 
-struct OrderList {
+struct OrderList: Codable {
     let time: Date
     let total: Double
     let orderList: [Order]

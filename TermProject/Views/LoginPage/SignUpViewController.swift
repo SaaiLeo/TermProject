@@ -47,7 +47,7 @@ class SignUpViewController: UIViewController {
             return
         }
         guard isValidPassword(password) else {
-            showAlert(message: "Password must be at least 6 characters long, contain at least one uppercase letter, one lowercase letter, and one number.")
+            showAlert(message: "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number.")
             return
         }
         
@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController {
     }
     
     func isValidPassword(_ password: String) -> Bool {
-        let lengthRequirement = password.count >= 6
+        let lengthRequirement = password.count >= 8
         let uppercaseRequirement = password.rangeOfCharacter(from: .uppercaseLetters) != nil
         let lowercaseRequirement = password.rangeOfCharacter(from: .lowercaseLetters) != nil
         let numberRequirement = password.rangeOfCharacter(from: .decimalDigits) != nil

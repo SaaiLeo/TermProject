@@ -60,6 +60,13 @@ class CartPageViewController: UIViewController, CALayerDelegate {
 //        calculateTotalInCart()
 //        totalLabel.text = "\(total)"
         
+        if CART.isEmpty {
+            let alert = UIAlertController(title: "Empty Cart", message: "Please add items to your cart before placing an order.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let db = Firestore.firestore()
         
         guard let userId = Auth.auth().currentUser?.uid else {

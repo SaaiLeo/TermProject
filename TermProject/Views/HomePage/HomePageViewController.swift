@@ -66,7 +66,6 @@ class HomePageViewController: UIViewController {
     }
     
     private func changingUsername() {
-        // change username according to logIn
         if let user = Auth.auth().currentUser {
             let db = Firestore.firestore()
             let userId = user.uid
