@@ -64,6 +64,7 @@ class CakeMenuDetailViewController: UIViewController {
         let order = Order(image: menu.image, name: menu.name, total: Double(String(format: "%.2f",self.total))!, sweetnessLvl: self.sweetnessLvl, size: self.size, quantity: self.quantity)
         self.dismiss(animated: true, completion: {
             CART.append(order)
+            CartPageViewController().saveCartToUserDefaults()
             self.onCartUpdated?()
         })
     }

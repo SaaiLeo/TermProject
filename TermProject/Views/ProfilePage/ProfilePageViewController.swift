@@ -64,6 +64,11 @@ class ProfilePageViewController: UIViewController {
             try fireAuth.signOut()
             GIDSignIn.sharedInstance.signOut()
             
+            CART = []
+            
+            UserDefaults.standard.removeObject(forKey: "savedCart")
+            UserDefaults.standard.synchronize()
+            
             let loginPage = storyboard?.instantiateViewController(withIdentifier: LoginPageViewController.identifier) as! LoginPageViewController
             loginPage.modalPresentationStyle = .fullScreen
             loginPage.modalTransitionStyle = .crossDissolve

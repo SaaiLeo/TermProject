@@ -25,17 +25,18 @@ class CartPageViewController: UIViewController, CALayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadCartFromUserDefaults()
         registerCells()
 //        CART.append(Order(image:"french_fries", name: "French Fries", total: 3, sweetnessLvl: "", size: "Small", quantity: 3))
 //        CART.append(Order(image:"french_fries", name: "French Fries", total: 2, sweetnessLvl: "", size: "Large", quantity: 2))
 //        CART.append(Order(image:"french_fries", name: "French Fries", total: 1, sweetnessLvl: "", size: "Normal", quantity: 1))
-//        
         calculateTotalInCart()
         totalLabel.text = "\(total)"
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tableView.reloadData()
         calculateTotalInCart()
         totalLabel.text = "\(total)"
@@ -99,9 +100,27 @@ class CartPageViewController: UIViewController, CALayerDelegate {
                 CART = []
                 HISTORY.append(orderlist)
                 
+                self.saveCartToUserDefaults()
                 self.tableView.reloadData()
                 self.calculateTotalInCart()
                 self.totalLabel.text = "\(self.total)"
+            }
+        }
+    }
+    
+    
+    func saveCartToUserDefaults() {
+        let encoder = JSONEncoder()
+        if let encodedCart = try? encoder.encode(CART) {
+        UserDefaults.standard.set(encodedCart, forKey: "savedCart")
+        }
+    }
+
+    func loadCartFromUserDefaults() {
+        let decoder = JSONDecoder()
+        if let savedCartData = UserDefaults.standard.object(forKey: "savedCart") as? Data {
+            if let loadedCart = try? decoder.decode([Order].self, from: savedCartData) {
+                CART = loadedCart
             }
         }
     }
@@ -131,6 +150,8 @@ extension CartPageViewController: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             // Remove the item from the data source
             CART.remove(at: indexPath.row)
+            
+            saveCartToUserDefaults()
             
             // Remove the row from the table view
             tableView.deleteRows(at: [indexPath], with: .automatic)
