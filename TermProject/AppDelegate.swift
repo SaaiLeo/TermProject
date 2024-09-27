@@ -18,14 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
         print("App didFinishLaunchingWithOptions called")
-
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.makeKeyAndVisible()
-//
-//        checkUserSignInStatus()
         
         DataManager.shared.fetchMenus { success in
             if success {
@@ -51,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         print("AppDelegate: Quick Action Triggered While App is Running: \(shortcutItem.type)")
         
-        // Dispatch the handling to SceneDelegate
         DispatchQueue.main.async {
             if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
                 sceneDelegate.handleQuickAction(shortcutItem)
@@ -64,8 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
@@ -80,33 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
       return GIDSignIn.sharedInstance.handle(url)
     }
-    
-//    func checkUserSignInStatus(){
-//        print("Checking user sign-in status...")
-//        if let user = Auth.auth().currentUser {
-//            print("User is already signed in: \(user.uid)")
-//            showHomeScreen()
-//        } else {
-//            print("No user is signed in.")
-//            showLoginScreen()
-//        }
-//    }
-//    
-//    func showHomeScreen() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-//        let homePage = storyboard.instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
-//        window?.rootViewController = homePage
-//        window?.makeKeyAndVisible()
-//        
-//    }
-//
-//    
-//    func showLoginScreen() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-//        let loginPage = storyboard.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
-//        self.window?.rootViewController = loginPage
-//        window?.makeKeyAndVisible()
-//    }
 
 }
 
