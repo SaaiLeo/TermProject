@@ -12,47 +12,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        print("Scene willConnectTo called")
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         window = UIWindow(windowScene: windowScene)
-        
-        if Auth.auth().currentUser != nil {
-            let tabBarController = storyboard.instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
-            window?.rootViewController = tabBarController
+
+        let isNewUser = UserDefaults.standard.bool(forKey: "isNewUser")
+
+        if !isNewUser {
+            let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnBoardingPageViewController") as! OnBoardingPageViewController
+            window?.rootViewController = onboardingVC
             window?.makeKeyAndVisible()
-            
-            if let shortcutItem = connectionOptions.shortcutItem {
-                print("Quick action at Launch")
-                handleQuickAction(shortcutItem)
-            }
+
+            UserDefaults.standard.set(true, forKey: "isNewUser")
         } else {
-            let loginPage = storyboard.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
-            window?.rootViewController = loginPage
-            window?.makeKeyAndVisible()
+            if Auth.auth().currentUser != nil {
+                let tabBarController = storyboard.instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
+                window?.rootViewController = tabBarController
+                window?.makeKeyAndVisible()
+                
+                if let shortcutItem = connectionOptions.shortcutItem {
+                    handleQuickAction(shortcutItem)
+                }
+            } else {
+                let loginPage = storyboard.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
+                window?.rootViewController = loginPage
+                window?.makeKeyAndVisible()
+            }
         }
     }
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        print("Quick Action Triggered in Foreground: \(shortcutItem.type)")
-        
         handleQuickAction(shortcutItem)
         completionHandler(true)
     }
     
     func handleQuickAction(_ shortcutItem: UIApplicationShortcutItem) {
-        print("SceneDelegate: Processing Quick Action: \(shortcutItem.type)")
-        
         if DataManager.shared.menus.isEmpty {
             DataManager.shared.fetchMenus { success in
                 if success {
                     self.navigateToMenu(shortcutItem)
-                } else {
-                    print("SceneDelegate: Failed to fetch menus for quick action")
                 }
             }
         } else {
@@ -63,7 +64,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func navigateToMenu(_ shortcutItem: UIApplicationShortcutItem) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let tabBarController = window?.rootViewController as? UITabBarController else {
-            print("SceneDelegate: Root view controller is not a TabBarController")
             return
         }
         
@@ -71,28 +71,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let navController = tabBarController.selectedViewController as? UINavigationController {
             guard let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as? MenuPageViewController else {
-                print("SceneDelegate: Failed to instantiate MenuPageViewController")
                 return
             }
             
             switch shortcutItem.type {
             case "OrderCoffeeAction":
                 menuPageVC.menus = DataManager.shared.menus.filter { $0.category == "coffee" }
-                print("SceneDelegate: Navigating to Coffee Menu")
             case "OrderCakeAction":
                 menuPageVC.menus = DataManager.shared.menus.filter { $0.category == "cake" }
-                print("SceneDelegate: Navigating to Cake Menu")
             case "OrderMealAction":
                 menuPageVC.menus = DataManager.shared.menus.filter { $0.category == "meal" }
-                print("SceneDelegate: Navigating to Meal Menu")
             default:
-                print("SceneDelegate: Unknown Quick Action")
                 return
             }
             
             navController.pushViewController(menuPageVC, animated: true)
-        } else {
-            print("SceneDelegate: Selected view controller is not a UINavigationController")
         }
     }
 
