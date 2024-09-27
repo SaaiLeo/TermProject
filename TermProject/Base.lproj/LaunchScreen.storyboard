@@ -17,26 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="Yrq-zR-tH7">
-                                <rect key="frame" x="36.666666666666657" y="249.99999999999997" width="320" height="377.33333333333326"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="nQy-Bb-THa">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9m-Ai-JGJ">
-                                        <rect key="frame" x="82.333333333333329" y="354" width="155.33333333333337" height="23.333333333333314"/>
-                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="23"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="wx0-BD-Y3S">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="851.66666666666663"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngp-V2-Qv4">
+                                <rect key="frame" x="0.0" y="851.66666666666663" width="393" height="0.33333333333337123"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="DrA-1Q-G7e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Yrq-zR-tH7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0w4-1q-bDQ"/>
-                            <constraint firstItem="Yrq-zR-tH7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yqO-2H-ehM"/>
+                            <constraint firstItem="wx0-BD-Y3S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="18j-Su-zcA"/>
+                            <constraint firstAttribute="trailing" secondItem="Ngp-V2-Qv4" secondAttribute="trailing" id="CZI-h7-2mh"/>
+                            <constraint firstItem="Ngp-V2-Qv4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Xmx-UV-13l"/>
+                            <constraint firstItem="wx0-BD-Y3S" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="oFp-SD-32v"/>
+                            <constraint firstAttribute="bottom" secondItem="Ngp-V2-Qv4" secondAttribute="bottom" id="pIy-4l-C0H"/>
+                            <constraint firstItem="wx0-BD-Y3S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qft-OU-Hpd"/>
+                            <constraint firstItem="Ngp-V2-Qv4" firstAttribute="top" secondItem="wx0-BD-Y3S" secondAttribute="bottom" id="yl9-J3-wOv"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lunchScreen" width="320" height="320"/>
+        <image name="launch" width="735" height="1031"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
