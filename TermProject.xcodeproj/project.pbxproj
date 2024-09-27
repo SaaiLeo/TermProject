@@ -42,6 +42,7 @@
 		B3679EA82C901019000F9F24 /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3679EA72C901019000F9F24 /* CartItemTableViewCell.xib */; };
 		B3679EA92C901019000F9F24 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3679EA62C901019000F9F24 /* CartItemTableViewCell.swift */; };
 		B3B5803C2C8C931900CDB83F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B5803B2C8C931900CDB83F /* Order.swift */; };
+		FA5950692CA6E7640025B9EB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5950682CA6E7640025B9EB /* DataManager.swift */; };
 		B3CE9FE72CA6C42900C6E537 /* MenuCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = B3CE9FE62CA6C42900C6E537 /* MenuCategory.json */; };
 		FA946E5C2C8B381D004A29C9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */; };
 		FA946E5F2C8B39A2004A29C9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FA946E5E2C8B39A2004A29C9 /* FirebaseAuth */; };
@@ -92,6 +93,7 @@
 		B3679EA62C901019000F9F24 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
 		B3679EA72C901019000F9F24 /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
 		B3B5803B2C8C931900CDB83F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		FA5950682CA6E7640025B9EB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		B3CE9FE62CA6C42900C6E537 /* MenuCategory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MenuCategory.json; sourceTree = "<group>"; };
 		FA946E5B2C8B381D004A29C9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAAB65C32C909C46003F7E3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				B33812D22C89A36E00696E61 /* Models */,
 				B33812BE2C899F7300696E61 /* AppDelegate.swift */,
 				B33812C02C899F7300696E61 /* SceneDelegate.swift */,
+				FA5950682CA6E7640025B9EB /* DataManager.swift */,
 				B33812C42C899F7300696E61 /* Main.storyboard */,
 				FAAB65C32C909C46003F7E3B /* GoogleService-Info.plist */,
 				B33812C72C899F7400696E61 /* Assets.xcassets */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5950692CA6E7640025B9EB /* DataManager.swift in Sources */,
 				B33812D62C89A3BB00696E61 /* OnBoardingPageViewController.swift in Sources */,
 				FAE8AB0A2C8B2DBA00889425 /* HistoryPageViewController.swift in Sources */,
 				B33812BF2C899F7300696E61 /* AppDelegate.swift in Sources */,
@@ -620,6 +624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TermProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -648,6 +653,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TermProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
