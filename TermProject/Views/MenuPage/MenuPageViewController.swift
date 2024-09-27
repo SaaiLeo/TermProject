@@ -50,7 +50,7 @@ class MenuPageViewController: UIViewController {
     
 }
 
-extension MenuPageViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MenuPageViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.menus.count
     }
@@ -119,5 +119,22 @@ extension MenuPageViewController: UICollectionViewDataSource, UICollectionViewDe
         
     }
     
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let totalSpacing: CGFloat = 150
+//        let numberOfColumns: CGFloat = 2
+//        let availableWidth = collectionView.bounds.width - (totalSpacing * 2)
+//        let itemWidth = availableWidth / numberOfColumns
+//        return CGSize(width: itemWidth, height: itemWidth * 1.5)
+//    }
+
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10 
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
     
+
 }
