@@ -37,20 +37,20 @@ class NonDrinkMenuDetailViewController: UIViewController {
         menuImageView.image = UIImage(named: menu.image)
         nameLabel.text = menu.name
         
-        totalLabel.text = menu.price
+        totalLabel.text = "THB \(menu.price)"
         
         size = menu.sizePrice[0].size
         sweetnessLvl = ""
         totalPerCup = menu.getPrice(forSize: size)
         calculateTotal()
         
-        priceLabel.text = menu.price
+        priceLabel.text = "THB \(menu.price)"
     }
     
     private func calculateTotal() {
         total = totalPerCup * Double(quantity)
-        priceLabel.text = String(format: "%.2f", totalPerCup)
-        totalLabel.text = String(format: "%.2f", total)
+        priceLabel.text = "THB " + String(format: "%.2f", totalPerCup)
+        totalLabel.text = "THB " + String(format: "%.2f", total)
     }
     
     

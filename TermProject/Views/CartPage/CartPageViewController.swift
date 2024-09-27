@@ -37,10 +37,13 @@ class CartPageViewController: UIViewController, CALayerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         tableView.reloadData()
         calculateTotalInCart()
-        totalLabel.text = "\(total)"
+        totalLabel.text = "THB \(total)"
     }
+    
+
     
     private func registerCells() {
         tableView.register(UINib(nibName: CartItemTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CartItemTableViewCell.identifier)

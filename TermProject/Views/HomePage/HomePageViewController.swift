@@ -43,12 +43,12 @@ class HomePageViewController: UIViewController {
          let barButtonItem = UIBarButtonItem(customView: button)
          self.navigationItem.rightBarButtonItem = barButtonItem
         
-        categories.append(MenuCategory(id: "id0", image: "pokeball", title: "Near me"))
-        categories.append(MenuCategory(id: "id1", image: "category_coffee", title: "coffee"))
-        categories.append(MenuCategory(id: "id2", image: "category_cake", title: "cake"))
-        categories.append(MenuCategory(id: "id3", image: "category_meal", title: "meal"))
-        categories.append(MenuCategory(id: "id4", image: "category_icecream", title: "icecream"))
-        categories.append(MenuCategory(id: "id5", image: "category_drink", title: "drink"))
+//        categories.append(MenuCategory(id: "id0", image: "pokeball", title: "Near me"))
+//        categories.append(MenuCategory(id: "id1", image: "category_coffee", title: "coffee"))
+//        categories.append(MenuCategory(id: "id2", image: "category_cake", title: "cake"))
+//        categories.append(MenuCategory(id: "id3", image: "category_meal", title: "meal"))
+//        categories.append(MenuCategory(id: "id4", image: "category_icecream", title: "icecream"))
+//        categories.append(MenuCategory(id: "id5", image: "category_drink", title: "drink"))
               
 //        if let jsonFile = readJSONFile(named: "CoffeeShopMenu", withExtension: "json") {
 //            MENUS = jsonFile.menus
@@ -61,6 +61,7 @@ class HomePageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         registerCell()
         changingUsername()
+        fetchCategory()
         fetchingMenu()
         greetingBasedOnTime(in: "Asia/Bangkok")
     }
@@ -82,11 +83,23 @@ class HomePageViewController: UIViewController {
         }
     }
     
-    private func fetchingMenu() {
-        AF.request("https://raw.githubusercontent.com/SaaiLeo/TermProject/main/TermProject/Models/CoffeeShopMenu.json").responseDecodable(of: Menus.self) { data in
+    private func fetchCategory() {
+        AF.request("https://raw.githubusercontent.com/SaaiLeo/TermProject/refs/heads/main/TermProject/Models/MenuCategory.json").responseDecodable(of: Categories.self) { data in
             switch data.result {
-            case .success(let menus):
-                MENUS = menus.menus
+            case .success(let result):
+                self.categories = result.categories
+                self.updateUI()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func fetchingMenu() {
+        AF.request("https://raw.githubusercontent.com/SaaiLeo/TermProject/refs/heads/main/TermProject/Models/CoffeeShopMenu.json").responseDecodable(of: Menus.self) { data in
+            switch data.result {
+            case .success(let result):
+                MENUS = result.menus
                 self.seperatePopularity()
                 self.updateUI()
             case .failure(let error):
@@ -97,11 +110,11 @@ class HomePageViewController: UIViewController {
     
     private func seperatePopularity() {
         bestSellers = MENUS.filter{ $0.popularity == "bestSeller" }
-        print("bestSeller: \(bestSellers.count)")
         trendings = MENUS.filter{ $0.popularity == "trending" }
     }
     
     func updateUI() {
+        categoryCollectionView.reloadData()
         bestSellerCollectionView.reloadData()
         trendingsCollectionView.reloadData()
     }

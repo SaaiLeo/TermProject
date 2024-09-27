@@ -25,6 +25,11 @@ class HistoryPageViewController: UIViewController {
         tableView.reloadData()
     }
     
+    // Function to sort an array of OrderList by time, most recent first
+    func sortOrderListsByTimeDescending(orderLists: [OrderList]) -> [OrderList] {
+        return orderLists.sorted { $0.time > $1.time }
+    }
+    
     private func fetchOrderHistoryFromfirestore() {
         let db = Firestore.firestore()
         
@@ -66,6 +71,7 @@ class HistoryPageViewController: UIViewController {
                     let orderListObj = OrderList(time: timestamp.dateValue(), total: total, orderList: orderList)
                     HISTORY.append(orderListObj)
                 }
+                HISTORY = self.sortOrderListsByTimeDescending(orderLists: HISTORY)
                 
                 self.tableView.reloadData()
             }
