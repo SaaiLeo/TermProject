@@ -16,18 +16,51 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        print("App didFinishLaunchingWithOptions called")
 
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.makeKeyAndVisible()
 //
 //        checkUserSignInStatus()
         
+        DataManager.shared.fetchMenus { success in
+            if success {
+                print("AppDelegate: Menus fetched successfully")
+            } else {
+                print("AppDelegate: Failed to fetch menus")
+            }
+        }
+        
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            print("Quick Action Triggered on Launch in AppDelegate")
+            DispatchQueue.main.async {
+                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    sceneDelegate.handleQuickAction(shortcutItem)
+                }
+            }
+
+            return false
+        }
         return true
     }
-
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print("AppDelegate: Quick Action Triggered While App is Running: \(shortcutItem.type)")
+        
+        // Dispatch the handling to SceneDelegate
+        DispatchQueue.main.async {
+            if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                sceneDelegate.handleQuickAction(shortcutItem)
+                completionHandler(true)
+            } else {
+                completionHandler(false)
+            }
+        }
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
