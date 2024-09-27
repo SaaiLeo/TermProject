@@ -1,0 +1,35 @@
+{
+  "categories": [
+    {
+      "id": "id0",
+      "image": "pokeball",
+      "title": "Near me"
+    },
+    {
+      "id": "id1",
+      "image": "category_coffee",
+      "title": "coffee"
+    },
+    {
+      "id": "id2",
+      "image": "category_cake",
+      "title": "cake"
+    },
+    {
+      "id": "id3",
+      "image": "category_meal",
+      "title": "meal"
+    },
+    {
+      "id": "id4",
+      "image": "category_icecream",
+      "title": "icecream"
+    },
+    {
+      "id": "id5",
+      "image": "category_drink",
+      "title": "drink"
+    }
+  ]
+}
+
