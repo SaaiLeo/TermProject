@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,20 +19,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarController = storyboard.instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
-        
-        // Set up the window with the TabBarController as the root
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
-
-
-        if let shortcutItem = connectionOptions.shortcutItem {
-            print("Quick action at Launch")
-            handleQuickAction(shortcutItem)
-        }
-
         
+        if Auth.auth().currentUser != nil {
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "tbcontroller") as! UITabBarController
+            window?.rootViewController = tabBarController
+            window?.makeKeyAndVisible()
+            
+            if let shortcutItem = connectionOptions.shortcutItem {
+                print("Quick action at Launch")
+                handleQuickAction(shortcutItem)
+            }
+        } else {
+            let loginPage = storyboard.instantiateViewController(withIdentifier: "LoginPageViewController") as! LoginPageViewController
+            window?.rootViewController = loginPage
+            window?.makeKeyAndVisible()
+        }
     }
     
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
@@ -44,9 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func handleQuickAction(_ shortcutItem: UIApplicationShortcutItem) {
         print("SceneDelegate: Processing Quick Action: \(shortcutItem.type)")
         
-        // Check if DataManager's menus are loaded
         if DataManager.shared.menus.isEmpty {
-            // Fetch menus first
             DataManager.shared.fetchMenus { success in
                 if success {
                     self.navigateToMenu(shortcutItem)
@@ -66,17 +67,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        // Select the appropriate tab (assuming index 0 is the homepage)
         tabBarController.selectedIndex = 0
         
         if let navController = tabBarController.selectedViewController as? UINavigationController {
-            // Instantiate MenuPageViewController
             guard let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as? MenuPageViewController else {
                 print("SceneDelegate: Failed to instantiate MenuPageViewController")
                 return
             }
             
-            // Filter menus based on the shortcut type
             switch shortcutItem.type {
             case "OrderCoffeeAction":
                 menuPageVC.menus = DataManager.shared.menus.filter { $0.category == "coffee" }
@@ -92,7 +90,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
             }
             
-            // Push the MenuPageViewController onto the navigation stack
             navController.pushViewController(menuPageVC, animated: true)
         } else {
             print("SceneDelegate: Selected view controller is not a UINavigationController")
@@ -100,84 +97,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     
-//    func handleQuickAction(_ shortcutItem: UIApplicationShortcutItem) {
-//        print("Processing Quick Action: \(shortcutItem.type)")
-//
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        guard let tabBarController = window?.rootViewController as? UITabBarController else {
-//            print("Root view controller is not a TabBarController")
-//            return
-//        }
-//
-//        switch shortcutItem.type {
-//        case "OrderCoffeeAction":
-//            tabBarController.selectedIndex = 0
-//            if let selectedNavController = tabBarController.selectedViewController as? UINavigationController {
-//                let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as! MenuPageViewController
-//                menuPageVC.menus = MENUS.filter { $0.category == "coffee" }
-//                selectedNavController.pushViewController(menuPageVC, animated: true)
-//            }
-//        case "OrderCakeAction":
-//            tabBarController.selectedIndex = 0
-//            if let selectedNavController = tabBarController.selectedViewController as? UINavigationController {
-//                let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as! MenuPageViewController
-//                menuPageVC.menus = MENUS.filter { $0.category == "cake" }
-//                selectedNavController.pushViewController(menuPageVC, animated: true)
-//            }
-//        case "OrderMealAction":
-//            tabBarController.selectedIndex = 0
-//            if let selectedNavController = tabBarController.selectedViewController as? UINavigationController {
-//                let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as! MenuPageViewController
-//                menuPageVC.menus = MENUS.filter { $0.category == "meal" }
-//                selectedNavController.pushViewController(menuPageVC, animated: true)
-//            }
-//        default:
-//            break
-//        }
-//    }
-
-    
-//    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        switch shortcutItem.type {
-//        case "OrderCoffeeAction":
-//            if let tabBarController = window?.rootViewController as? UITabBarController {
-//                tabBarController.selectedIndex = 0
-//                
-//                if let selectedNavController = tabBarController.selectedViewController as? UINavigationController {
-//                    let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as! MenuPageViewController
-//                    menuPageVC.menus = MENUS.filter { $0.category == "coffee" }
-//                    selectedNavController.pushViewController(menuPageVC, animated: true)
-//                }
-//            }
-//            
-//        case "OrderCakeAction":
-//            if let tabBarController = window?.rootViewController as? UITabBarController {
-//                tabBarController.selectedIndex = 0
-//                
-//                if let selectedNavController = tabBarController.selectedViewController as? UINavigationController {
-//                    let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as! MenuPageViewController
-//                    menuPageVC.menus = MENUS.filter { $0.category == "cake" }
-//                    selectedNavController.pushViewController(menuPageVC, animated: true)
-//                }
-//            }
-//        case "OrderMealAction":
-//            if let tabBarController = window?.rootViewController as? UITabBarController {
-//                tabBarController.selectedIndex = 0
-//                
-//                if let selectedNavController = tabBarController.selectedViewController as? UINavigationController {
-//                    let menuPageVC = storyboard.instantiateViewController(withIdentifier: "MenuPageViewController") as! MenuPageViewController
-//                    menuPageVC.menus = MENUS.filter { $0.category == "meal" }
-//                    selectedNavController.pushViewController(menuPageVC, animated: true)
-//                }
-//            }
-//        default:
-//            break
-//        }
-//        
-//        completionHandler(true)
-//    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

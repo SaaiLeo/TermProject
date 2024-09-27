@@ -15,37 +15,33 @@
 			</array>
 		</dict>
 	</array>
-    
-    <key>UIApplicationShortcutItems</key>
-    <array>
-        <dict>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>icon_coffee</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Order Coffee</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>OrderCoffeeAction</string>
-        </dict>
-        
-        <dict>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>cake_icon</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Order Cake</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>OrderCakeAction</string>
-        </dict>
-        
-        <dict>
-            <key>UIApplicationShortcutItemIconFile</key>
-            <string>meal_icon</string>
-            <key>UIApplicationShortcutItemTitle</key>
-            <string>Order Meal</string>
-            <key>UIApplicationShortcutItemType</key>
-            <string>OrderMealAction</string>
-        </dict>
-    </array>
-            
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>icon_coffee</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Order Coffee</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OrderCoffeeAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>cake_icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Order Cake</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OrderCakeAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>meal_icon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Order Meal</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OrderMealAction</string>
+		</dict>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -59,8 +55,6 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
 				</dict>
 			</array>
 		</dict>

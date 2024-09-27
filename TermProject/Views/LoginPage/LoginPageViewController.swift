@@ -28,9 +28,6 @@ class LoginPageViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
-        if Auth.auth().currentUser != nil {
-            navigateToHomeScreen()
-        }
     }
     
     
