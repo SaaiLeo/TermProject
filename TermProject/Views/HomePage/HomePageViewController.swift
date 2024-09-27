@@ -83,7 +83,7 @@ class HomePageViewController: UIViewController {
     }
     
     private func fetchingMenu() {
-        AF.request("https://raw.githubusercontent.com/SaaiLeo/TermProject/main/TermProject/Models/CoffeeShopMenu.json").responseDecodable(of: Menus.self) { data in
+        AF.request("https://raw.githubusercontent.com/SaaiLeo/TermProject/refs/heads/main/TermProject/Models/CoffeeShopMenu.json").responseDecodable(of: Menus.self) { data in
             switch data.result {
             case .success(let menus):
                 MENUS = menus.menus

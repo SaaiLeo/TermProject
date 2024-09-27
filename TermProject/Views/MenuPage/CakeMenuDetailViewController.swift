@@ -39,17 +39,17 @@ class CakeMenuDetailViewController: UIViewController {
         nameLabel.text = menu.name
         
         totalPerCup = menu.sizePrice[0].price
-        totalLabel.text = menu.price 
+        totalLabel.text = "THB \(menu.price)"
 
         calculateTotal()
         
-        priceLabel.text = menu.price
+        priceLabel.text = "THB \(menu.price)"
     }
     
     private func calculateTotal() {
         total = totalPerCup * Double(quantity)
-        priceLabel.text = String(format: "%.2f", totalPerCup)
-        totalLabel.text = String(format: "%.2f", total)
+        priceLabel.text = "THB " + String(format: "%.2f", totalPerCup)
+        totalLabel.text = "THB " + String(format: "%.2f", total)
     }
 
     
