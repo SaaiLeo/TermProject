@@ -40,7 +40,7 @@
         },
         {
             "name": "Burbasaur coffee",
-            "price": "$3.99",
+            "price": "100",
             "image": "coffee_burbasaur",
             "category": "coffee",
             "popularity": "",
@@ -140,566 +140,566 @@
         },
         {
             "name": "Ninetails coffee",
-            "price": "$2.49",
+            "price": "100",
             "image": "coffee_ninetails",
             "category": "coffee",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
         {
             "name": "Pikachu coffee",
-            "price": "$2.99",
+            "price": "100",
             "image": "coffee_pikachu",
             "category": "coffee",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
         {
             "name": "Snorlax coffee",
-            "price": "$2.79",
+            "price": "100",
             "image": "coffee_snorlax",
             "category": "coffee",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 100.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 120.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 130.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 150.0
                 }
             ]
         },
         {
             "name": "Piplup cupcake",
-            "price": "$4.49",
+            "price": "30",
             "image": "cupcake_piplup",
             "category": "cake",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.49
+                    "price": 30.0
                 }
             ]
         },
         {
             "name": "Pipalop soda",
-            "price": "$2.79",
+            "price": "35",
             "image": "drink_pipalop",
             "category": "drink",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 35.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 40.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 45.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 50.0
                 }
             ]
         },
         {
             "name": "Sylveon yogurt",
-            "price": "$2.79",
+            "price": "65",
             "image": "drink_sylveon",
             "category": "drink",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 65.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 75.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 80.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 90.0
                 }
             ]
         },
         {
             "name": "alcremie icecream",
-            "price": "$2.79",
+            "price": "45",
             "image": "icecream_alcremie",
             "category": "icecream",
             "popularity": "trending",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 45.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 55.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 60.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 70.0
                 }
             ]
         },
         {
             "name": "Burbasaur icecream",
-            "price": "$2.79",
+            "price": "45",
             "image": "icecream_burbasaur",
             "category": "icecream",
             "popularity": "trending",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 45.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 55.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 60.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 70.0
                 }
             ]
         },
         {
             "name": "Pikachu icecream",
-            "price": "$2.79",
+            "price": "45",
             "image": "icecream_pikachu",
             "category": "icecream",
             "popularity": "trending",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 45.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 55.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 60.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 70.0
                 }
             ]
         },
         {
             "name": "Psyduck icecream",
-            "price": "$2.79",
+            "price": "45",
             "image": "icecream_psyduck",
             "category": "icecream",
             "popularity": "trending",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 45.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 55.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 60.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 70.0
                 }
             ]
         },
         {
             "name": "Snorlax icecream",
-            "price": "$2.79",
+            "price": "45",
             "image": "icecream_snorlax",
             "category": "icecream",
             "popularity": "trending",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 45.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 55.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 60.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 70.0
                 }
             ]
         },
         {
             "name": "Psyduck Jelly",
-            "price": "$2.79",
+            "price": "30",
             "image": "jelly_psyduck",
             "category": "",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 30.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 40.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 45.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 50.0
                 }
             ]
         },
         {
             "name": "Burbasaur macaron",
-            "price": "$2.79",
+            "price": "25",
             "image": "macaron_burbasaur",
             "category": "cake",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 25
                 }
             ]
         },
         {
             "name": "Shellda macaron",
-            "price": "$2.79",
+            "price": "25",
             "image": "macaron_shellda",
             "category": "cake",
             "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 25.0
                 }
             ]
         },
         {
             "name": "Burbasaur torchic",
-            "price": "$2.79",
+            "price": "25",
             "image": "macaron_torchic",
             "category": "cake",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 25
                 }
             ]
         },
         {
             "name": "Mudkip tart",
-            "price": "$2.79",
+            "price": "35",
             "image": "tart_mudkip",
             "category": "cake",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 35.0
                 }
             ]
         },
         {
             "name": "Charmandar meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_charmandar",
             "category": "meal",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Evee meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_eevee",
             "category": "meal",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Glaceon meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_glaceon",
             "category": "meal",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Jigglypuff meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_jigglypuff",
             "category": "meal",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Magikarp meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_magikarp",
             "category": "meal",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Meowth meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_meowth",
             "category": "meal",
             "popularity": "",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Mimikyu meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_mimikyu",
             "category": "meal",
             "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Pikachu meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_pikachu",
             "category": "meal",
             "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         },
         {
             "name": "Squirtle meal",
-            "price": "$2.79",
+            "price": "120",
             "image": "meal_squirtle",
             "category": "meal",
             "popularity": "bestSeller",
             "sizePrice": [
                 {
                     "size": "Small",
-                    "price": 4.29
+                    "price": 120.0
                 },
                 {
                     "size": "Medium",
-                    "price": 5.29
+                    "price": 135.0
                 },
                 {
                     "size": "Large",
-                    "price": 6.29
+                    "price": 145.0
                 },
                 {
                     "size": "Extra Large",
-                    "price": 6.99
+                    "price": 160.0
                 }
             ]
         }
