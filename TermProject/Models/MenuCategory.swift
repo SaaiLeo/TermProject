@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct MenuCategory {
+struct MenuCategory: Codable {
     let id: String
     let image: String
     let title: String
+}
+
+struct Categories: Codable {
+    let categories: [MenuCategory]
 }

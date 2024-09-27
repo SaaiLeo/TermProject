@@ -970,7 +970,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PeG-ZL-QuB">
-                        <barButtonItem key="rightBarButtonItem" image="pencil.line" catalog="system" id="jJM-BG-Lg5">
+                        <barButtonItem key="rightBarButtonItem" image="pencil" catalog="system" id="jJM-BG-Lg5">
                             <color key="tintColor" red="0.434515655" green="0.31501138210000001" blue="0.2218712866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editProfileBtnClicked:" destination="JEt-xJ-L1W" id="I2S-24-xoT"/>
@@ -1896,7 +1896,7 @@
         <image name="googleLogo" width="2000" height="2000"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
-        <image name="pencil.line" catalog="system" width="128" height="117"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="phone" catalog="system" width="128" height="115"/>
