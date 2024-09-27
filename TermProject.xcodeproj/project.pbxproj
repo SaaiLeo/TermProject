@@ -58,7 +58,7 @@
 
 /* Begin PBXFileReference section */
 		B319BAAE2C93EA7E00D521ED /* shakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shakeAnimation.swift; sourceTree = "<group>"; };
-		B33812BB2C899F7300696E61 /* TermProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TermProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33812BB2C899F7300696E61 /* PokeShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33812BE2C899F7300696E61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B33812C02C899F7300696E61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B33812C52C899F7300696E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		B33812BC2C899F7300696E61 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B33812BB2C899F7300696E61 /* TermProject.app */,
+				B33812BB2C899F7300696E61 /* PokeShop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,9 +355,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B33812BA2C899F7300696E61 /* TermProject */ = {
+		B33812BA2C899F7300696E61 /* PokeShop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B33812CF2C899F7400696E61 /* Build configuration list for PBXNativeTarget "TermProject" */;
+			buildConfigurationList = B33812CF2C899F7400696E61 /* Build configuration list for PBXNativeTarget "PokeShop" */;
 			buildPhases = (
 				B33812B72C899F7300696E61 /* Sources */,
 				B33812B82C899F7300696E61 /* Frameworks */,
@@ -367,7 +367,7 @@
 			);
 			dependencies = (
 			);
-			name = TermProject;
+			name = PokeShop;
 			packageProductDependencies = (
 				FA946E5E2C8B39A2004A29C9 /* FirebaseAuth */,
 				FA946E602C8B39A2004A29C9 /* FirebaseDatabase */,
@@ -378,7 +378,7 @@
 				B3332B2F2C995456005F357B /* Alamofire */,
 			);
 			productName = TermProject;
-			productReference = B33812BB2C899F7300696E61 /* TermProject.app */;
+			productReference = B33812BB2C899F7300696E61 /* PokeShop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -414,7 +414,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B33812BA2C899F7300696E61 /* TermProject */,
+				B33812BA2C899F7300696E61 /* PokeShop */,
 			);
 		};
 /* End PBXProject section */
@@ -687,7 +687,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B33812CF2C899F7400696E61 /* Build configuration list for PBXNativeTarget "TermProject" */ = {
+		B33812CF2C899F7400696E61 /* Build configuration list for PBXNativeTarget "PokeShop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B33812D02C899F7400696E61 /* Debug */,
