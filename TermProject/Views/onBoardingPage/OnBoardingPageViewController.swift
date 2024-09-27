@@ -29,7 +29,7 @@ class OnBoardingPageViewController: UIViewController {
         super.viewDidLoad()
         
         slides.append(OnBoardingSlide(image:#imageLiteral(resourceName: "onBording1.png"), title: "Pokemon Chief", description: "Enjoy your food that are prepared by our pokemon"))
-        slides.append(OnBoardingSlide(image: #imageLiteral(resourceName: "pokemonIcecream.png"), title: "Yummies", description: "We serve not only the look but also the taste."))
+        slides.append(OnBoardingSlide(image: #imageLiteral(resourceName: "meal_mimikyu.jpeg"), title: "Yummies", description: "We serve not only the look but also the taste."))
         
         pageControl.numberOfPages = slides.count
 
