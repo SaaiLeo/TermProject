@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KqT-n2-ggl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -14,7 +14,7 @@
         <!--On Boarding Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="OnBoardingPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OnBoardingPageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnBoardingCollectionViewCell" id="cHY-9r-sA5" customClass="OnBoardingCollectionViewCell" customModule="TermProject" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnBoardingCollectionViewCell" id="cHY-9r-sA5" customClass="OnBoardingCollectionViewCell" customModule="PokeShop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="4.666666666666667" width="393" height="626"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SKu-4G-YqN">
@@ -139,7 +139,7 @@
         <!--Login Page View Controller-->
         <scene sceneID="o4O-Vv-Vgy">
             <objects>
-                <viewController storyboardIdentifier="LoginPageViewController" id="KqT-n2-ggl" customClass="LoginPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPageViewController" id="KqT-n2-ggl" customClass="LoginPageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5sQ-85-Xhr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +300,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="t8M-cn-4Mp">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" id="iqN-Ph-7I6" customClass="SignUpViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="iqN-Ph-7I6" customClass="SignUpViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OPg-K2-Hqz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -456,7 +456,7 @@
         <!--Cafe Shop-->
         <scene sceneID="xpP-t4-CRq">
             <objects>
-                <viewController id="JWH-3b-WrG" customClass="HomePageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JWH-3b-WrG" customClass="HomePageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yg7-QF-lgj">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -664,7 +664,7 @@
         <!--Cart Page View Controller-->
         <scene sceneID="cpA-BQ-4bJ">
             <objects>
-                <viewController storyboardIdentifier="CartPageViewController" id="kxh-B2-4ch" customClass="CartPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CartPageViewController" id="kxh-B2-4ch" customClass="CartPageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KBn-Sz-V5K">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -764,7 +764,7 @@
         <!--Profile Page View Controller-->
         <scene sceneID="eNS-R9-T2h">
             <objects>
-                <viewController storyboardIdentifier="profilepage" id="JEt-xJ-L1W" customClass="ProfilePageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profilepage" id="JEt-xJ-L1W" customClass="ProfilePageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hl0-YT-iDu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -992,7 +992,7 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="YUE-1Z-3TB">
             <objects>
-                <viewController storyboardIdentifier="editprofilepage" id="CN1-3Z-3gt" customClass="EditProfileViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editprofilepage" id="CN1-3Z-3gt" customClass="EditProfileViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4J-bp-IVf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1121,7 +1121,7 @@
         <!--Shop near me-->
         <scene sceneID="mK8-Np-u9s">
             <objects>
-                <viewController storyboardIdentifier="MapPageViewController" id="asG-Zr-0G0" customClass="MapPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapPageViewController" id="asG-Zr-0G0" customClass="MapPageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P3D-g3-iR5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1184,6 +1184,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wxR-q9-xFC">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.37254902719999999" green="0.28627452250000002" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1197,7 +1198,7 @@
         <!--Menu Page View Controller-->
         <scene sceneID="GDM-sR-Vb5">
             <objects>
-                <viewController storyboardIdentifier="MenuPageViewController" id="DTp-st-ptc" customClass="MenuPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuPageViewController" id="DTp-st-ptc" customClass="MenuPageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lXG-Tu-KNM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1239,7 +1240,7 @@
         <!--Non Drink Menu Detail View Controller-->
         <scene sceneID="zeI-et-gGt">
             <objects>
-                <viewController storyboardIdentifier="NonDrinkMenuDetailViewController" id="aRf-G8-afZ" customClass="NonDrinkMenuDetailViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NonDrinkMenuDetailViewController" id="aRf-G8-afZ" customClass="NonDrinkMenuDetailViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wfY-eQ-6Lk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1425,7 +1426,7 @@
         <!--Menu Detail View Controller-->
         <scene sceneID="1mA-ux-cHp">
             <objects>
-                <viewController storyboardIdentifier="MenuDetailViewController" id="0pC-m9-1MZ" customClass="MenuDetailViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuDetailViewController" id="0pC-m9-1MZ" customClass="MenuDetailViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="biL-bS-qO1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1636,14 +1637,13 @@
         <!--Cake Menu Detail View Controller-->
         <scene sceneID="8Uc-ah-4kg">
             <objects>
-                <viewController storyboardIdentifier="CakeMenuDetailViewController" id="dXb-4j-mSq" customClass="CakeMenuDetailViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CakeMenuDetailViewController" id="dXb-4j-mSq" customClass="CakeMenuDetailViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SqI-ha-Er2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dMS-Xm-aAk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMS-Xm-aAk">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="468"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pKc-wR-lwU">
                                 <rect key="frame" x="0.0" y="468" width="393" height="350"/>
@@ -1774,8 +1774,12 @@
                             <constraint firstItem="Otm-dw-OuZ" firstAttribute="trailing" secondItem="NDb-jb-Kjp" secondAttribute="trailing" id="C2t-ZT-SMB"/>
                             <constraint firstItem="Otm-dw-OuZ" firstAttribute="leading" secondItem="NDb-jb-Kjp" secondAttribute="leading" id="CYs-lw-vJt"/>
                             <constraint firstItem="pKc-wR-lwU" firstAttribute="trailing" secondItem="NDb-jb-Kjp" secondAttribute="trailing" id="JaQ-Fa-6K4"/>
+                            <constraint firstItem="dMS-Xm-aAk" firstAttribute="trailing" secondItem="NDb-jb-Kjp" secondAttribute="trailing" id="KqM-ug-09O"/>
                             <constraint firstItem="pKc-wR-lwU" firstAttribute="top" secondItem="Otm-dw-OuZ" secondAttribute="bottom" id="NOc-ac-fkd"/>
+                            <constraint firstItem="dMS-Xm-aAk" firstAttribute="top" secondItem="SqI-ha-Er2" secondAttribute="top" id="n3F-yr-12c"/>
+                            <constraint firstItem="dMS-Xm-aAk" firstAttribute="leading" secondItem="NDb-jb-Kjp" secondAttribute="leading" id="rV1-4a-FmK"/>
                             <constraint firstItem="pKc-wR-lwU" firstAttribute="leading" secondItem="NDb-jb-Kjp" secondAttribute="leading" id="rYD-D9-Ph1"/>
+                            <constraint firstItem="pKc-wR-lwU" firstAttribute="top" secondItem="dMS-Xm-aAk" secondAttribute="bottom" id="ywt-JD-JYI"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1794,7 +1798,7 @@
         <!--History-->
         <scene sceneID="4fH-9F-CEB">
             <objects>
-                <viewController id="jN4-3j-Kyk" customClass="HistoryPageViewController" customModule="TermProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jN4-3j-Kyk" customClass="HistoryPageViewController" customModule="PokeShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q6Q-m6-1HG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1853,6 +1857,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ob5-em-LcV">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.37254902719999999" green="0.28627452250000002" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
