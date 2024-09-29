@@ -59,25 +59,34 @@ class ProfilePageViewController: UIViewController {
     }
     
     @IBAction func logoutBtnClicked(_ sender: UIButton) {
-        let fireAuth = Auth.auth()
-        do {
-            try fireAuth.signOut()
-            GIDSignIn.sharedInstance.signOut()
-            
-            CART = []
-            
-            UserDefaults.standard.removeObject(forKey: "savedCart")
-            UserDefaults.standard.synchronize()
-            
-            let loginPage = storyboard?.instantiateViewController(withIdentifier: LoginPageViewController.identifier) as! LoginPageViewController
-            loginPage.modalPresentationStyle = .fullScreen
-            loginPage.modalTransitionStyle = .crossDissolve
-            present(loginPage, animated: true)
-            
-        } catch let signOutError as NSError {
-            print("Error signing out: \(signOutError.localizedDescription)")
-        }
+        let alert = UIAlertController(title: "Log Out", message: "Do you want to log out?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { _ in
+            let fireAuth = Auth.auth()
+            do {
+                try fireAuth.signOut()
+                GIDSignIn.sharedInstance.signOut()
+                
+                CART = []
+                
+                UserDefaults.standard.removeObject(forKey: "savedCart")
+                UserDefaults.standard.synchronize()
+                
+                let loginPage = self.storyboard?.instantiateViewController(withIdentifier: LoginPageViewController.identifier) as! LoginPageViewController
+                loginPage.modalPresentationStyle = .fullScreen
+                loginPage.modalTransitionStyle = .crossDissolve
+                self.present(loginPage, animated: true)
+                
+            } catch let signOutError as NSError {
+                print("Error signing out: \(signOutError.localizedDescription)")
+            }
+        }))
+        
+        present(alert, animated: true)
     }
+
     
     @IBAction func editProfileBtnClicked(_ sender: UIBarButtonItem) {
         let editProfilePage = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "editprofilepage") as! EditProfileViewController
